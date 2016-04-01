@@ -3,3 +3,8 @@
   * conky
   * atom
   * lxterminal
+  * compizconfig-settings-manager
+  * compiz-plugins
+  * R
+  * yaourt
+  * xcompmgr
