@@ -1,0 +1,18 @@
+# eye candy
+(compton -b) &
+
+# panel
+(sleep 1s && tint2 -c ~/.config/tint2/tint2rc_1) &
+#(sleep 1s && tint2 -c ~/.config/tint2/tint2rc_2) &
+
+# Set wallpaper
+(sleep 1s && feh --bg-scale ~/Pictures/Wallpaper/arch2.jpg) &
+
+# Network manager
+# (sleep 1s && nm-applet) &
+
+# Enable as required
+#/usr/bin/synclient TouchpadOff=1 &
+
+# Onscreen system stats
+(sleep 2 && conky) &
