@@ -8,3 +8,4 @@
   * R
   * yaourt
   * xcompmgr
+  * laptop-mode
