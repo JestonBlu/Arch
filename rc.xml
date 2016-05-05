@@ -1,4 +1,3 @@
-<?xml version="1.0"?>
 <openbox_config xmlns="http://openbox.org/3.4/rc">
   <resistance>
     <strength>10</strength>
@@ -7,155 +6,145 @@
   <focus>
     <focusNew>yes</focusNew>
     <!-- always try to focus new windows when they appear. other rules do
-apply -->
+       apply -->
     <followMouse>no</followMouse>
     <!-- move focus to a window when you move the mouse into it -->
     <focusLast>yes</focusLast>
     <!-- focus the last used window when changing desktops, instead of the one
-under the mouse pointer. when followMouse is enabled -->
+       under the mouse pointer. when followMouse is enabled -->
     <underMouse>no</underMouse>
     <!-- move focus under the mouse, even when the mouse is not moving -->
     <focusDelay>200</focusDelay>
     <!-- when followMouse is enabled, the mouse must be inside the window for
-this many milliseconds (1000 = 1 sec) before moving focus to it -->
+       this many milliseconds (1000 = 1 sec) before moving focus to it -->
     <raiseOnFocus>no</raiseOnFocus>
     <!-- when followMouse is enabled, and a window is given focus by moving the
-mouse into it, also raise the window -->
+       mouse into it, also raise the window -->
   </focus>
   <placement>
-    <policy>UnderMouse</policy>
+    <policy>Smart</policy>
     <!-- 'Smart' or 'UnderMouse' -->
     <center>yes</center>
     <!-- whether to place windows in the center of the free area found or
-the top left corner -->
-    <monitor>Active</monitor>
-    <!-- with Smart placement on a multi-monitor system, try to place new windows
-on: 'Any' - any monitor, 'Mouse' - where the mouse is, 'Active' - where
-the active window is -->
-    <primaryMonitor>1</primaryMonitor>
-    <!-- The monitor where Openbox should place popup dialogs such as the
-focus cycling popup, or the desktop switch popup.  It can be an index
-from 1, specifying a particular monitor.  Or it can be one of the
-following: 'Mouse' - where the mouse is, or
-'Active' - where the active window is -->
+       the top left corner -->
+    <monitor>Any</monitor>
+    <primaryMonitor/>
   </placement>
   <theme>
-    <name>Carbon</name>
-    <titleLayout>LIMC</titleLayout>
+    <name>BBstyle</name>
+    <titleLayout>DSLIMC</titleLayout>
     <!--
-available characters are NDSLIMC, each can occur at most once.
-N: window icon
-L: window label (AKA title).
-I: iconify
-M: maximize
-C: close
-S: shade (roll up/down)
-D: omnipresent (on all desktops).
--->
-    <keepBorder>no</keepBorder>
-    <animateIconify>yes</animateIconify>
+      avaible characters are NDSLIMC, each can occur at most once.
+      N: window icon
+      L: window label (AKA title).
+      I: iconify
+      M: maximize
+      C: close
+      S: shade (roll up/down)
+      D: omnipresent (on all desktops).
+  -->
+    <keepBorder>yes</keepBorder>
+    <animateIconify>no</animateIconify>
     <font place="ActiveWindow">
-      <name>Sans</name>
+      <name>Liberation Sans</name>
       <size>10</size>
       <!-- font size in points -->
-      <weight>normal</weight>
+      <weight>Bold</weight>
       <!-- 'bold' or 'normal' -->
-      <slant>normal</slant>
+      <slant>Normal</slant>
       <!-- 'italic' or 'normal' -->
     </font>
     <font place="InactiveWindow">
-      <name>Sans</name>
+      <name>Liberation Sans</name>
       <size>10</size>
       <!-- font size in points -->
-      <weight>normal</weight>
+      <weight>Normal</weight>
       <!-- 'bold' or 'normal' -->
-      <slant>normal</slant>
+      <slant>Normal</slant>
       <!-- 'italic' or 'normal' -->
     </font>
     <font place="MenuHeader">
-      <name>Sans</name>
-      <size>9</size>
+      <name>Liberation Sans</name>
+      <size>10</size>
       <!-- font size in points -->
-      <weight>normal</weight>
+      <weight>Normal</weight>
       <!-- 'bold' or 'normal' -->
-      <slant>normal</slant>
+      <slant>Normal</slant>
       <!-- 'italic' or 'normal' -->
     </font>
     <font place="MenuItem">
-      <name>Sans</name>
+      <name>Liberation Sans</name>
       <size>10</size>
       <!-- font size in points -->
-      <weight>normal</weight>
+      <weight>Normal</weight>
       <!-- 'bold' or 'normal' -->
-      <slant>normal</slant>
+      <slant>Normal</slant>
       <!-- 'italic' or 'normal' -->
     </font>
     <font place="ActiveOnScreenDisplay">
       <name/>
+      <size>8</size>
+      <weight/>
+      <slant/>
     </font>
     <font place="InactiveOnScreenDisplay">
       <name>Sans</name>
-      <size>10</size>
+      <size>8</size>
       <weight/>
       <slant/>
     </font>
   </theme>
   <desktops>
     <!-- this stuff is only used at startup, pagers allow you to change them
-during a session
+       during a session
 
-these are default values to use when other ones are not already set
-by other applications, or saved in your session
+       these are default values to use when other ones are not already set
+       by other applications, or saved in your session
 
-use obconf if you want to change these without having to log out
-and back in -->
-    <number>4</number>
+       use obconf if you want to change these without having to log out
+       and back in -->
+    <number>2</number>
     <firstdesk>1</firstdesk>
     <names>
-      <!-- set names up here if you want to, like this:
-<name>desktop 1</name>
-<name>desktop 2</name>
--->
+      <name>1</name>
+      <name>2</name>
+      <name>3</name>
+      <name>4</name>
     </names>
     <popupTime>875</popupTime>
     <!-- The number of milliseconds to show the popup for when switching
-desktops.  Set this to 0 to disable the popup. -->
+       desktops.  Set this to 0 to disable the popup. -->
   </desktops>
   <resize>
     <drawContents>yes</drawContents>
     <popupShow>Nonpixel</popupShow>
     <!-- 'Always', 'Never', or 'Nonpixel' (xterms and such) -->
     <popupPosition>Center</popupPosition>
-    <!-- 'Center', 'Top', or 'Fixed' -->
+    <!-- 'Center' or 'Top' -->
     <popupFixedPosition>
-      <!-- these are used if popupPosition is set to 'Fixed' -->
-      <x>10</x>
-      <!-- positive number for distance from left edge, negative number for
-distance from right edge, or 'Center' -->
-      <y>10</y>
-      <!-- positive number for distance from top edge, negative number for
-distance from bottom edge, or 'Center' -->
+      <x>0</x>
+      <y>0</y>
     </popupFixedPosition>
   </resize>
   <!-- You can reserve a portion of your screen where windows will not cover when
-they are maximized, or when they are initially placed.
-Many programs reserve space automatically, but you can use this in other
-cases. -->
+     they are maximized, or when they are initially placed.
+     Many programs reserve space automatically, but you can use this in other
+     cases. -->
   <margins>
-    <top>23</top>
-    <bottom>0</bottom>
+    <top>1</top>
+    <bottom>25</bottom>
     <left>0</left>
     <right>0</right>
   </margins>
   <dock>
-    <position>BottomRight</position>
+    <position>TopLeft</position>
     <!-- (Top|Bottom)(Left|Right|)|Top|Bottom|Left|Right|Floating -->
     <floatingX>0</floatingX>
     <floatingY>0</floatingY>
     <noStrut>no</noStrut>
-    <stacking>Below</stacking>
+    <stacking>Above</stacking>
     <!-- 'Above', 'Normal', or 'Below' -->
-    <direction>Horizontal</direction>
+    <direction>Vertical</direction>
     <!-- 'Vertical' or 'Horizontal' -->
     <autoHide>no</autoHide>
     <hideDelay>300</hideDelay>
@@ -167,58 +156,47 @@ cases. -->
   </dock>
   <keyboard>
     <chainQuitKey>C-g</chainQuitKey>
+    <keybind key="W-1">
+      <action name="Execute">
+        <command>obprofile --restore</command>
+        <startupnotify>
+          <enabled>yes</enabled>
+          <name>obprofile</name>
+        </startupnotify>
+      </action>
+    </keybind>
+    <keybind key="W-2">
+      <action name="Execute">
+        <command>obprofile --light</command>
+        <startupnotify>
+          <enabled>yes</enabled>
+          <name>obprofile</name>
+        </startupnotify>
+      </action>
+    </keybind>
+    <keybind key="W-3">
+      <action name="Execute">
+        <command>obprofile --dark</command>
+        <startupnotify>
+          <enabled>yes</enabled>
+          <name>obprofile</name>
+        </startupnotify>
+      </action>
+    </keybind>
+    <keybind key="W-4">
+      <action name="Execute">
+        <command>obprofile --user</command>
+        <startupnotify>
+          <enabled>yes</enabled>
+          <name>obprofile</name>
+        </startupnotify>
+      </action>
+    </keybind>
     <keybind key="C-A-Left">
       <action name="DesktopLeft">
         <wrap>no</wrap>
       </action>
     </keybind>
-    <keybind key="XF86PowerOff">
-      <action name="Execute">
-        <command>systemctl poweroff</command>
-      </action>
-    </keybind>
-    <!-- <aero snap addition> -->
-    <keybind key="W-S-Left">
-      <action name="UnmaximizeFull"/>
-      <action name="MaximizeVert"/>
-      <action name="MoveResizeTo">
-        <width>50%</width>
-      </action>
-      <action name="MoveToEdge">
-        <direction>west</direction>
-      </action>
-    </keybind>
-    <keybind key="W-S-Right">
-      <action name="UnmaximizeFull"/>
-      <action name="MaximizeVert"/>
-      <action name="MoveResizeTo">
-        <width>50%</width>
-      </action>
-      <action name="MoveToEdge">
-        <direction>east</direction>
-      </action>
-    </keybind>
-    <keybind key="W-S-Up">
-      <action name="UnmaximizeFull"/>
-      <action name="MaximizeHorz"/>
-      <action name="MoveResizeTo">
-        <height>50%</height>
-      </action>
-      <action name="MoveToEdge">
-        <direction>north</direction>
-      </action>
-    </keybind>
-    <keybind key="W-S-Down">
-      <action name="UnmaximizeFull"/>
-      <action name="MaximizeHorz"/>
-      <action name="MoveResizeTo">
-        <height>50%</height>
-      </action>
-      <action name="MoveToEdge">
-        <direction>south</direction>
-      </action>
-    </keybind>
-    <!-- </aero snap addition> -->
     <keybind key="C-A-Right">
       <action name="DesktopRight">
         <wrap>no</wrap>
@@ -255,7 +233,9 @@ cases. -->
       </action>
     </keybind>
     <keybind key="W-F1">
-      <action name="Desktop"/>
+      <action name="Desktop">
+        <desktop>1</desktop>
+      </action>
     </keybind>
     <keybind key="W-F2">
       <action name="Desktop">
@@ -278,15 +258,6 @@ cases. -->
     <keybind key="A-F4">
       <action name="Close"/>
     </keybind>
-    <keybind key="A-F3">
-      <action name="Execute">
-        <command>~/.config/dmenu/dmenu-bind.sh</command>
-        <startupnotify>
-          <enabled>yes</enabled>
-          <name>dmenu</name>
-        </startupnotify>
-      </action>
-    </keybind>
     <keybind key="A-Escape">
       <action name="Lower"/>
       <action name="FocusToBottom"/>
@@ -295,6 +266,11 @@ cases. -->
     <keybind key="A-space">
       <action name="ShowMenu">
         <menu>client-menu</menu>
+      </action>
+    </keybind>
+    <keybind key="Print">
+      <action name="Execute">
+        <command>xfce4-screenshooter</command>
       </action>
     </keybind>
     <keybind key="A-Tab">
@@ -309,61 +285,117 @@ cases. -->
         <desktop>yes</desktop>
       </action>
     </keybind>
+    <keybind key="A-F2">
+      <action name="Execute">
+        <command>gmrun</command>
+        <startupnotify>
+          <enabled>yes</enabled>
+          <name>Run Program</name>
+        </startupnotify>
+      </action>
+    </keybind>
+    <keybind key="A-F3">
+      <action name="Execute">
+        <command>~/.config/dmenu/dmenu-bind.sh</command>
+        <startupnotify>
+          <enabled>yes</enabled>
+          <name>dmenu-bind</name>
+        </startupnotify>
+      </action>
+    </keybind>
+    <keybind key="W-f">
+      <action name="Execute">
+        <command>thunar</command>
+        <startupnotify>
+          <enabled>yes</enabled>
+          <name>thunar</name>
+        </startupnotify>
+      </action>
+    </keybind>
+    <keybind key="W-t">
+      <action name="Execute">
+        <command>terminator --geometry=1000x500</command>
+        <startupnotify>
+          <enabled>yes</enabled>
+          <name>Terminal</name>
+        </startupnotify>
+      </action>
+    </keybind>
     <keybind key="W-w">
       <action name="Execute">
-        <command>chromium</command>
+        <command>x-www-browser</command>
         <startupnotify>
           <enabled>yes</enabled>
           <name>Web Browser</name>
         </startupnotify>
       </action>
     </keybind>
-    <keybind key="W-t">
-      <action name="Execute">
-        <command>lxterminal --geometry=100x25</command>
-        <startupnotify>
-          <enabled>yes</enabled>
-          <name>terminal</name>
-        </startupnotify>
-      </action>
-    </keybind>
     <keybind key="W-e">
       <action name="Execute">
-        <command>geany</command>
+        <command>atom</command>
         <startupnotify>
           <enabled>yes</enabled>
-          <name>Leafpad</name>
-        </startupnotify>
-      </action>
-    </keybind>
-    <keybind key="W-f">
-      <action name="Execute">
-        <command>pcmanfm</command>
-        <startupnotify>
-          <enabled>yes</enabled>
-          <name>File Manager</name>
-        </startupnotify>
-      </action>
-    </keybind>
-    <keybind key="W-q">
-      <action name="Execute">
-        <command>xkill</command>
-        <startupnotify>
-          <enabled>yes</enabled>
-          <name>Kill an application</name>
+          <name>Editor</name>
         </startupnotify>
       </action>
     </keybind>
     <keybind key="W-v">
-      <action name="ToggleMaximizeVert"/>
-    </keybind>
-    <keybind key="W-r">
       <action name="Execute">
-        <command>update_doc</command>
+        <command>xfce4-mixer</command>
         <startupnotify>
           <enabled>yes</enabled>
-          <name>DOC</name>
+          <name>Volume</name>
         </startupnotify>
+      </action>
+    </keybind>
+    <keybind key="W-c">
+      <action name="Execute">
+        <command>gb-switcher-conky</command>
+        <startupnotify>
+          <enabled>yes</enabled>
+          <name>ConkySwitch</name>
+        </startupnotify>
+      </action>
+    </keybind>
+    <keybind key="W-S-c">
+      <action name="Execute">
+        <command>gb-changer-conky --9menu</command>
+        <startupnotify>
+          <enabled>yes</enabled>
+          <name>ConkyChanger</name>
+        </startupnotify>
+      </action>
+    </keybind>
+    <keybind key="W-S-b">
+      <action name="Execute">
+        <command>gb-changer-tint2 --9menu</command>
+        <startupnotify>
+          <enabled>yes</enabled>
+          <name>Tint2Changer</name>
+        </startupnotify>
+      </action>
+    </keybind>
+    <keybind key="W-S-w">
+      <action name="Execute">
+        <command>gb-changer-wbar --9menu</command>
+        <startupnotify>
+          <enabled>yes</enabled>
+          <name>WbarChanger</name>
+        </startupnotify>
+      </action>
+    </keybind>
+    <keybind key="W-x">
+      <action name="Execute">
+        <command>sudo oblogout</command>
+        <startupnotify>
+          <enabled>yes</enabled>
+          <name>Logout</name>
+        </startupnotify>
+      </action>
+    </keybind>
+    <keybind key="W-Tab">
+      <action name="ShowMenu">
+        <menu>client-list-combined-menu</menu>
       </action>
     </keybind>
     <keybind key="W-space">
@@ -371,75 +403,27 @@ cases. -->
         <menu>root-menu</menu>
       </action>
     </keybind>
-    <keybind key="W-a">
-      <action name="ToggleMaximizeFull"/>
-    </keybind>
-    <keybind key="W-Right">
-      <action name="MoveToEdgeEast"/>
-    </keybind>
-    <keybind key="W-Up">
-      <action name="MoveToEdgeNorth"/>
-    </keybind>
-    <keybind key="W-Left">
-      <action name="MoveToEdgeWest"/>
-    </keybind>
-    <keybind key="W-Down">
-      <action name="MoveToEdgeSouth"/>
-    </keybind>
-    <keybind key="W-h">
-      <action name="ToggleMaximizeHorz"/>
-    </keybind>
-    <keybind key="A-W-Up">
-      <action name="GrowToEdgeNorth"/>
-    </keybind>
-    <keybind key="A-W-Right">
-      <action name="GrowToEdgeEast"/>
-    </keybind>
-    <keybind key="A-W-Down">
-      <action name="GrowToEdgeSouth"/>
-    </keybind>
-    <keybind key="A-W-Left">
-      <action name="GrowToEdgeWest"/>
-    </keybind>
-    <keybind key="W-c">
-      <action name="MoveToCenter"/>
-    </keybind>
-    <keybind key="XF86AudioRaiseVolume">
-      <action name="Execute">
-        <command>amixer set Master 5%+ unmute</command>
+    <keybind key="A-C-q">
+      <action name="ShowMenu">
+        <menu>root-menu</menu>
       </action>
     </keybind>
-    <keybind key="XF86AudioLowerVolume">
+    <keybind key="A-W-space">
       <action name="Execute">
-        <command>amixer set Master 5%- unmute</command>
-      </action>
-    </keybind>
-    <keybind key="XF86AudioMute">
-      <action name="Execute">
-        <command>amixer set Master toggle</command>
-      </action>
-    </keybind>
-    <keybind key="XF86ScreenSaver">
-      <action name="Execute">
-        <command>slock</command>
-      </action>
-    </keybind>
-    <keybind key="XF86Sleep">
-      <action name="Execute">
-        <command>sudo pm-suspend</command>
-      </action>
-    </keybind>
-    <keybind key="F2">
-      <action name="Execute">
-        <command>gmrun</command>
-      </action>
-    </keybind>
-    <keybind key="F1">
-      <action name="Execute">
-        <command>synapse</command>
+        <command>uxm-menu</command>
+        <startupnotify>
+          <enabled>yes</enabled>
+          <name>widgetmenu</name>
+        </startupnotify>
       </action>
     </keybind>
   </keyboard>
+  <keybind key="W-A-a">
+     <action name="ToggleMaximizeFull"/>
+    </keybind>
+  <keybind key="W-A-m">
+    <action name="MoveToCenter"/>
+    </keybind>
   <mouse>
     <dragThreshold>8</dragThreshold>
     <!-- number of pixels the mouse must move before a drag begins -->
@@ -447,8 +431,8 @@ cases. -->
     <!-- in milliseconds (1000 = 1 second) -->
     <screenEdgeWarpTime>400</screenEdgeWarpTime>
     <!-- Time before changing desktops when the pointer touches the edge of the
-screen while moving a window, in milliseconds (1000 = 1 second).
-Set this to 0 to disable warping -->
+       screen while moving a window, in milliseconds (1000 = 1 second).
+       Set this to 0 to disable warping -->
     <context name="Frame">
       <mousebind action="Press" button="A-Left">
         <action name="Focus"/>
@@ -548,13 +532,6 @@ Set this to 0 to disable warping -->
           <edge>left</edge>
         </action>
       </mousebind>
-      <mousebind action="Press" button="Right">
-        <action name="Focus"/>
-        <action name="Raise"/>
-        <action name="ShowMenu">
-          <menu>client-menu</menu>
-        </action>
-      </mousebind>
     </context>
     <context name="Right">
       <mousebind action="Press" button="Left">
@@ -564,13 +541,6 @@ Set this to 0 to disable warping -->
       <mousebind action="Drag" button="Left">
         <action name="Resize">
           <edge>right</edge>
-        </action>
-      </mousebind>
-      <mousebind action="Press" button="Right">
-        <action name="Focus"/>
-        <action name="Raise"/>
-        <action name="ShowMenu">
-          <menu>client-menu</menu>
         </action>
       </mousebind>
     </context>
@@ -753,10 +723,6 @@ Set this to 0 to disable warping -->
         <action name="Focus"/>
         <action name="Raise"/>
       </mousebind>
-      <mousebind action="Press" button="Right">
-        <action name="Focus"/>
-        <action name="Raise"/>
-      </mousebind>
     </context>
     <context name="Root">
       <!-- Menus -->
@@ -786,21 +752,125 @@ Set this to 0 to disable warping -->
       </mousebind>
     </context>
   </mouse>
-  <menu><!-- You can specify more than one menu file in here and they are all loaded,
-just don't make menu ids clash or, well, it'll be kind of pointless --><!-- default menu file (or custom one in $HOME/.config/openbox/) --><file>menu.xml</file><hideDelay>200</hideDelay><!-- if a press-release lasts longer than this setting (in milliseconds), the
-menu is hidden again --><middle>no</middle><!-- center submenus vertically about the parent entry --><submenuShowDelay>100</submenuShowDelay><!-- time to delay before showing a submenu after hovering over the parent
-entry.
-if this is a negative value, then the delay is infinite and the
-submenu will not be shown until it is clicked on --><submenuHideDelay>400</submenuHideDelay><!-- time to delay before hiding a submenu when selecting another
-entry in parent menu -->
-if this is a negative value, then the delay is infinite and the
-submenu will not be hidden until a different submenu is opened --&gt;
-<applicationIcons>yes</applicationIcons>
-<!-- controls if icons appear in the client-list-(combined-)menu -->
-<manageDesktops>yes</manageDesktops>
-<!-- show the manage desktops section in the client-list-(combined-)menu -->
-<showIcons>yes</showIcons>
-</menu>
-  <applications><application class="*"><position><monitor>1</monitor></position><focus>yes</focus><maximized>no</maximized></application>til
-</applications>
+  <menu>
+    <!-- You can specify more than one menu file in here and they are all loaded,
+       just don't make menu ids clash or, well, it'll be kind of pointless -->
+    <!-- default menu file (or custom one in $HOME/.config/openbox/) -->
+    <!-- system menu files on Debian systems
+    <file>/var/lib/openbox/debian-menu.xml</file>
+    <file>debian-menu.xml</file> -->
+    <file>menu.xml</file>
+    <hideDelay>200</hideDelay>
+    <middle>no</middle>
+    <submenuShowDelay>100</submenuShowDelay>
+    <applicationIcons>yes</applicationIcons>
+  </menu>
+  <applications>
+    <!--
+  # this is an example with comments through out. use these to make your
+  # own rules, but without the comments of course.
+
+  <application name="first element of window's WM_CLASS property (see xprop)"
+              class="second element of window's WM_CLASS property (see xprop)"
+               role="the window's WM_WINDOW_ROLE property (see xprop)">
+  # the name or the class can be set, or both. this is used to match
+  # windows when they appear. role can optionally be set as well, to
+  # further restrict your matches.
+
+  # the name, class, and role use simple wildcard matching such as those
+  # used by a shell. you can use * to match any characters and ? to match
+  # any single character.
+
+  # when multiple rules match a window, they will all be applied, in the
+  # order that they appear in this list
+
+
+    # each element can be left out or set to 'default' to specify to not
+    # change that attribute of the window
+
+    <decor>yes</decor>
+    # enable or disable window decorations
+
+    <shade>no</shade>
+    # make the window shaded when it appears, or not
+
+    <position>
+      # the position is only used if both an x and y coordinate are provided
+      # (and not set to 'default')
+      <x>center</x>
+      # a number like 50, or 'center' to center on screen. use a negative number
+      # to start from the right (or bottom for <y>), ie -50 is 50 pixels from the
+      # right edge (or bottom).
+      <y>200</y>
+      <monitor>1</monitor>
+      # specifies the monitor in a xinerama setup.
+      # 1 is the first head, or 'mouse' for wherever the mouse is
+    </position>
+
+    <focus>yes</focus>
+    # if the window should try be given focus when it appears. if this is set
+    # to yes it doesn't guarantee the window will be given focus. some
+    # restrictions may apply, but Openbox will try to
+
+    <desktop>1</desktop>
+    # 1 is the first desktop, 'all' for all desktops
+
+    <layer>normal</layer>
+    # 'above', 'normal', or 'below'
+
+    <iconic>no</iconic>
+    # make the window iconified when it appears, or not
+
+    <skip_pager>no</skip_pager>
+    # asks to not be shown in pagers
+
+    <skip_taskbar>no</skip_taskbar>
+    # asks to not be shown in taskbars. window cycling actions will also
+    # skip past such windows
+
+    <fullscreen>yes</fullscreen>
+    # make the window in fullscreen mode when it appears
+
+    <maximized>true</maximized>
+    # 'Horizontal', 'Vertical' or boolean (yes/no)
+  </application>
+
+  # end of the example
+-->
+    <application name="tilda">
+      <layer>below</layer>
+    </application>
+    <application name="gmessage">
+      <decor>no</decor>
+      <shade>no</shade>
+      <skip_pager>yes</skip_pager>
+      <skip_taskbar>yes</skip_taskbar>
+      <fullscreen>no</fullscreen>
+      <maximized>no</maximized>
+    </application>
+    <application class="Gimp" name="gimp" role="gimp-toolbox" type="utility">
+      <maximized>vertical</maximized>
+    </application>
+    <application class="Gimp" name="gimp" role="gimp-dock" type="utility">
+      <maximized>vertical</maximized>
+    </application>
+    <application class="Gimp" name="gimp" role="gimp-image-window" type="normal">
+      <position force="no">
+        <x>center</x>
+        <y>center</y>
+      </position>
+    </application>
+    <application class="Gimp" name="gimp-2.6" role="gimp-toolbox" type="utility">
+      <maximized>vertical</maximized>
+    </application>
+    <application class="Gimp" name="gimp-2.6" role="gimp-dock" type="utility">
+      <maximized>vertical</maximized>
+    </application>
+    <application class="Gimp" name="gimp-2.6" role="gimp-image-window" type="normal">
+      <position force="no">
+        <x>center</x>
+        <y>center</y>
+      </position>
+    </application>
+  </applications>
 </openbox_config>

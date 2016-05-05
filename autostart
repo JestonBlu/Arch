@@ -1,0 +1,50 @@
+## Openbox autostart.sh
+## ====================
+
+## Enable power management
+xfce4-power-manager &
+
+## Start Thunar Daemon
+thunar --daemon &
+
+## Set desktop wallpaper
+nitrogen --restore &
+
+## Launch panel
+tint2 &
+
+## Start uxdgmenu daemon
+uxm-daemon start -f openbox &
+
+## Enable Eyecandy - off by default, uncomment one of the commands below.
+## Note: cairo-compmgr prefers a sleep delay, else it tends to produce
+## odd shadows/quirks around tint2 & Conky.
+#(sleep 10s && gb-compmgr --cairo-compmgr) &
+xcompmgr & 
+
+## Launch network manager applet
+(sleep 4s && nm-applet) &
+
+## Detect and configure touchpad. See 'man synclient' for more info.
+if egrep -iq 'touchpad' /proc/bus/input/devices; then
+    synclient VertEdgeScroll=1 &
+    synclient TapButton1=1 &
+fi
+
+## Start xscreensaver
+# xscreensaver -no-splash &
+
+## Start Conky after a slight delay
+(sleep 3s && conky -q) &
+
+## Start volumeicon after a slight delay
+(sleep 3s && volumeicon) &
+
+## Start Clipboard manager
+(sleep 3s && parcellite) &
+
+## Start ~/bin/homebin
+#(sleep 4s && homebin) &
+
+## Start tyling manager
+#(sleep 6s && pytyle) &
