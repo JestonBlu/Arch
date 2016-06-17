@@ -9,6 +9,7 @@ http://gloriouseggroll.tv/arch-linux-efi-install-guide/
 ##### Set up disks
 * `efivar -l` Checks whether you have and UEFI motherboard
 * `lsblk` Check out your disks, probably interested in /dev/sda
+* `sudo gparted` clear your disks
 * setup disks:
 ```
 cgdisk /dev/sdX
