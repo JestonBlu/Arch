@@ -49,7 +49,7 @@ sudo mkdir /mnt/boot
 sudo mount /dev/sda3 /mnt/boot
 ```
 
-##### Go through steps 1-9 of the gui install
+##### Go through steps 1-10 of the gui install (choose systemd on step 10) 
 
 * `sudo arch-chroot /mnt` chroot into the system
 * `sudo nano /etc/pacman.d/mirrorlist` uncomment a close mirrior
@@ -61,8 +61,5 @@ sudo mount /dev/sda3 /mnt/boot
 * `sudo mount -t efivarfs efivarfs /sys/firmware/efi/efivars` mount efi
 * `sudo bootctl install` 
 * `sudo pacman -Syyu` update system
-
-##### Back out of and go into the install gui, complete Step 10
-* Choose boot method systemd
 
 ##### Reboot
