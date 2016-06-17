@@ -53,6 +53,8 @@ sudo mount /dev/sda3 /mnt/boot
 
 * `sudo arch-chroot /mnt` chroot into the system
 * `sudo nano /etc/pacman.d/mirrorlist` uncomment a close mirrior
+* `pacman-key --init` initialize pacman
+* `sudo pacman-key --populate archlinux`
 * `sudo pacman -Sy` update repositories
 * `sudo pacman -S archlinux-keyring` may need to update keyring if iso is out of date
 * `sudo pacman -S bash-completion`
