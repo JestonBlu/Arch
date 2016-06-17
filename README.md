@@ -46,17 +46,20 @@ sudo mkfs.ext4 /dev/sda1
 sudo mount /dev/sda1 /mnt
 sudo mkdir /mnt/boot
 sudo mount /dev/sda3 /mnt/boot
-
 ```
 
 ##### Go through steps 1-9 of the gui install
 
 * `sudo arch-chroot /mnt` chroot into the system
 * `sudo nano /etc/pacman.d/mirrorlist` uncomment a close mirrior
-* may need to update keyring if out of date
+* `sudo pacman -Sy` update repositories
+* `sudo pacman -S archlinux-keyring` may need to update keyring if iso is out of date
 * `sudo pacman -S bash-completion`
 * `sudo mount -t efivarfs efivarfs /sys/firmware/efi/efivars` mount efi
 * `sudo bootctl install` 
+* `sudo pacman -Syyu` update system
 
 ##### Back out of and go into the install gui, complete Step 10
 * Choose boot method systemd
+
+##### Reboot
