@@ -59,3 +59,4 @@ sudo mount /dev/sda3 /mnt/boot
 * `sudo bootctl install` 
 
 ##### Back out of and go into the install gui, complete Step 10
+* Choose boot method systemd
