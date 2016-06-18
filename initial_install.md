@@ -7,6 +7,10 @@ compton
 base-devel
 yajl
 flash-player-plugin
+gmrun
+julia
+texlive-most
+gcc-fortran
 
 ##### Other Services
 * `sudo enable systemctl sshd.service` enable ssh connections
