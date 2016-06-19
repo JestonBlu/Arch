@@ -1,2 +1,3 @@
 ## Sync folders between 2 computers
-rsync -a 10.0.0.5:[folder]/* ~/[folder]
+## -P: progress  -a: archive  -r: recursive
+rsync -Pra 10.0.0.5:[folder]/* ~/[folder]
