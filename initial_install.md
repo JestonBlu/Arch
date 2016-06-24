@@ -11,6 +11,7 @@ gmrun
 julia
 texlive-most
 gcc-fortran
+pcmanfm
 
 ##### Other Services
 * `sudo enable systemctl sshd.service` enable ssh connections

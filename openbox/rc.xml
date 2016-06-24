@@ -323,7 +323,7 @@ cases. -->
 
 <keybind key="W-t">
 <action name="Execute">
-<command>lxterminal</command>
+<command>lxterminal --geometry=120x50+5+5</command>
 <startupnotify>
 <enabled>yes</enabled>
 <name>terminal</name>
@@ -376,6 +376,10 @@ cases. -->
 <keybind key="W-space">
 <action name="ShowMenu">
 <menu>root-menu</menu>
+	<position>
+		<x>5</x>
+        <y>5</y>
+    </position>
 </action>
 </keybind>
 <keybind key="W-a">
