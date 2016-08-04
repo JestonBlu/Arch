@@ -1,5 +1,5 @@
 # Set wallpaper
-(sleep 1s && feh --bg-scale /home/jeston/Pictures/blurry_gray.jpg) &
+(sleep 1s && feh --bg-scale /home/jeston/Pictures/gray5.jpg) &
 
 # panel
 (sleep 1s && tint2) &

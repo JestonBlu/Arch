@@ -1,6 +1,6 @@
 background yes
 use_xft yes
-xftfont monospace:size=10
+xftfont monospace:size=7
 xftalpha 1
 update_interval 1.0
 total_run_times 0
@@ -20,7 +20,7 @@ default_color 9494b8
 default_shade_color 000000
 default_outline_color d9d7d6
 alignment tr
-gap_x 1050
+gap_x 1100
 gap_y 750
 no_buffers yes
 uppercase no
@@ -32,4 +32,5 @@ color2 gray
 # Output
 ########
 TEXT
-${font sans:bold:size=8}cpu${offset 15}${cpubar cpu0 8,50}${offset 15}${font sans:bold:size=8}ram${offset 15}${membar 8,50}${offset 15}${font sans:bold:size=8}down${offset 5}${downspeedgraph wlp2s0 8,50}${offset 15}
+down${offset 15}${downspeedf wlp2s0}k${offset 20}cpu${offset 15}${cpubar cpu0 8,50}${offset 15}ram${offset 15}${membar 8,50}
+
