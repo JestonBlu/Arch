@@ -1,3 +1,8 @@
+# Screenshots
+
+![openbox.png](openbox)
+
+
 # Archbang install guide
 
 This guide is mainly to remind me how to install the boot loader everytime I redo my arch distro. I pretty much put it together from this link that was written for a straight arch install.
@@ -49,7 +54,7 @@ sudo mkdir /mnt/boot
 sudo mount /dev/sda3 /mnt/boot
 ```
 
-##### Go through steps 1-10 of the gui install (choose systemd on step 10) 
+##### Go through steps 1-10 of the gui install (choose systemd on step 10)
 
 * `sudo arch-chroot /mnt` chroot into the system
 * `sudo nano /etc/pacman.d/mirrorlist` uncomment a close mirrior
@@ -59,7 +64,7 @@ sudo mount /dev/sda3 /mnt/boot
 * `sudo pacman -S archlinux-keyring` may need to update keyring if iso is out of date
 * `sudo pacman -S bash-completion`
 * `sudo mount -t efivarfs efivarfs /sys/firmware/efi/efivars` mount efi
-* `sudo bootctl install` 
+* `sudo bootctl install`
 * `sudo pacman -Syyu` update system
 
 ##### Reboot
