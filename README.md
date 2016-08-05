@@ -1,6 +1,6 @@
 # Screenshots
 
-![openbox.png](openbox)
+![](openbox.png)
 
 
 # Archbang install guide
