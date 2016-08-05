@@ -1,5 +1,6 @@
 # Screenshots
 
+##### Minimal Openbox
 ![](openbox.png)
 
 
