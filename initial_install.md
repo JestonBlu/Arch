@@ -1,17 +1,16 @@
 ##### Install through pacman
-chromium
-mpv
-git
-i3
-compton
-base-devel
-yajl
-flash-player-plugin
-gmrun
-julia
-texlive-most
-gcc-fortran
-pcmanfm
+* chromium
+* mpv
+* git
+* compton
+* base-devel
+* yajl
+* flash-player-plugin
+* gmrun
+* julia
+* texlive-most
+* gcc-fortran
+* pcmanfm
 
 ##### Other Services
 * `sudo enable systemctl sshd.service` enable ssh connections
@@ -25,10 +24,10 @@ makepkg -si
 
 ```
 
-package-query
-yaourt
+* package-query
+* yaourt
 
 ##### Using yaourt
 
-atom-editor
-rstudio-desktop-bin
+* atom-editor
+* rstudio-desktop-bin
