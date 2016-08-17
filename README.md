@@ -1,15 +1,6 @@
 #### My Archbang Setup
 ![](openbox.png)
 
-##### Configuration Locations
-
-```
-configs: these files belong in the home directory
-dmenu: ~/.config/dmenu/
-gtk: /usr/share/themes/Blackbird/gtk-2.0/gtkrc
-theme: /usr/share/themes/Simple2/openbox-3/themerc
-openbox: ~/.config/openbox/
-```
 ##### Archbang install guide
 
 This guide is mainly to remind me how to install the boot loader everytime I redo my arch distro. I pretty much put it together from this link that was written for a straight arch install.
