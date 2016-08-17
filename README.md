@@ -1,6 +1,4 @@
 #### My Archbang Setup
-
-##### Minimal Openbox
 ![](openbox.png)
 
 ##### Configuration Locations
