@@ -1,4 +1,4 @@
-xit# Screenshots
+#### My Archbang Setup
 
 ##### Minimal Openbox
 ![](openbox.png)
