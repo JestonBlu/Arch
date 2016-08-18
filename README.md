@@ -1,5 +1,5 @@
 #### My Archbang Setup
-![](openbox.png)
+![](screenshots/openbox.png)
 
 #### Configuration Files for look and feel
 
