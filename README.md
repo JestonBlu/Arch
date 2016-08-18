@@ -1,13 +1,17 @@
 #### My Archbang Setup
 ![](openbox.png)
 
+#### Configuration Files for look and feel
+
+  * home: these files belong in the home directory
+  * dmenu: ~/.config/dmenu/
+  * Simple2: /usr/share/themes/Simple2/ (theme for openbox and gtk)
+
 ##### Archbang install guide
 
 This guide is mainly to remind me how to install the boot loader everytime I redo my arch distro. I pretty much put it together from this link that was written for a straight arch install.
 
 http://gloriouseggroll.tv/arch-linux-efi-install-guide/
-
-
 
 ##### Set up disks
 * `efivar -l` Checks whether you have and UEFI motherboard
