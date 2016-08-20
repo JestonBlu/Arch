@@ -2,4 +2,4 @@
 ## -a archive
 ## -z compress
 ## -P partial
-rsyn -azP user@computer:~/folder/ ~/folder
+rsync -azP user@computer:~/folder/ ~/folder
