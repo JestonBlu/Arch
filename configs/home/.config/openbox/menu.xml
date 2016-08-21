@@ -10,10 +10,12 @@
 <item label="Pandora"><action name="Execute"><execute>pithos</execute></action></item>
 <item label="Atom"><action name="Execute"><execute>atom</execute></action></item>
 
+<!--
 <separator/>
 <menu id="applications" label="Applications" execute="xdg_menu --format openbox3-pipe --root-menu /etc/xdg/menus/arch-applications.menu" />
-<separator/>
+-->
 
+<separator/>
 
 <menu id="root-menu-logout" label="Exit">
 <item label="Log Out"><action name="Execute"><execute>openbox --exit</execute></action></item>
