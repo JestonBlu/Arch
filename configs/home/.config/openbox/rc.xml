@@ -311,7 +311,7 @@ cases. -->
     </keybind>
     <keybind key="W-w">
       <action name="Execute">
-        <command>chromium</command>
+        <command>vivaldi-stable</command>
         <startupnotify>
           <enabled>yes</enabled>
           <name>Web Browser</name>
@@ -329,10 +329,10 @@ cases. -->
     </keybind>
     <keybind key="W-e">
       <action name="Execute">
-        <command>geany</command>
+        <command>atom</command>
         <startupnotify>
           <enabled>yes</enabled>
-          <name>Leafpad</name>
+          <name>Atom</name>
         </startupnotify>
       </action>
     </keybind>
