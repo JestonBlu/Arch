@@ -332,7 +332,7 @@ cases. -->
         <command>atom</command>
         <startupnotify>
           <enabled>yes</enabled>
-          <name>Leafpad</name>
+          <name>Atom</name>
         </startupnotify>
       </action>
     </keybind>

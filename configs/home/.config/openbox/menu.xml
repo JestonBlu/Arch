@@ -7,7 +7,8 @@
 <item label="Terminal"><action name="Execute"><execute>lxterminal --geometry=120x50</execute></action></item>
 <item label="Browser"><action name="Execute"><execute>vivaldi-stable</execute></action></item>
 <item label="File Manager"><action name="Execute"><execute>pcmanfm</execute></action></item>
-<item label="Editor"><action name="Execute"><execute>geany</execute></action></item>
+<item label="Pandora"><action name="Execute"><execute>pithos</execute></action></item>
+<item label="Atom"><action name="Execute"><execute>atom</execute></action></item>
 
 <!--
 <separator/>
