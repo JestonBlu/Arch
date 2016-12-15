@@ -3,17 +3,10 @@
 <menu id="root-menu" label="Openbox 3.5">
 
 <item label="Dmenu"><action name="Execute"><execute>~/.config/dmenu/dmenu-bind.sh</execute></action></item>
-<item label="Run Program"><action name="Execute"><execute>gmrun</execute></action></item>
 <item label="Terminal"><action name="Execute"><execute>lxterminal --geometry=120x50</execute></action></item>
 <item label="Browser"><action name="Execute"><execute>vivaldi-stable</execute></action></item>
-<item label="File Manager"><action name="Execute"><execute>pcmanfm</execute></action></item>
-<item label="Pandora"><action name="Execute"><execute>pithos</execute></action></item>
+<item label="File Manager"><action name="Execute"><execute>thunar</execute></action></item>
 <item label="Atom"><action name="Execute"><execute>atom</execute></action></item>
-
-<!--
-<separator/>
-<menu id="applications" label="Applications" execute="xdg_menu --format openbox3-pipe --root-menu /etc/xdg/menus/arch-applications.menu" />
--->
 
 <separator/>
 

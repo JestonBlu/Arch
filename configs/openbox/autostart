@@ -1,5 +1,5 @@
 # Set wallpaper
-(sleep 1s && feh --bg-scale /home/jeston/Pictures/blurry_gray.jpg) &
+(sleep 1s && feh --bg-scale /home/jeston/Backgrounds/blurry_gray.jpg) &
 
 # transparent windows
 (compton -b) &
@@ -8,10 +8,10 @@
 (sleep 1s && tint2) &
 
 # Networking system tray applet
-(sleep 3 && nm-applet) &
+#(sleep 3 && nm-applet) &
 
 # Volume control
-(sleep 3 && volumeicon) &
+#(sleep 3 && volumeicon) &
 
 # Onscreen system stats
 (sleep 2 && conky) &
