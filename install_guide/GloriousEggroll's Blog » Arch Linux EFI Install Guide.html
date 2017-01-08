@@ -1,0 +1,1703 @@
+<!DOCTYPE html>
+<!-- saved from url=(0055)http://gloriouseggroll.tv/arch-linux-efi-install-guide/ -->
+<html lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>GloriousEggroll's Blog » Arch Linux EFI Install Guide</title>
+        <link rel="pingback" href="http://gloriouseggroll.tv/xmlrpc.php">
+        
+                
+        <link rel="dns-prefetch" href="http://s.w.org/">
+<link rel="alternate" type="application/rss+xml" title="GloriousEggroll&#39;s Blog » Feed" href="http://gloriouseggroll.tv/feed/">
+<link rel="alternate" type="application/rss+xml" title="GloriousEggroll&#39;s Blog » Comments Feed" href="http://gloriouseggroll.tv/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="GloriousEggroll&#39;s Blog » Arch Linux EFI Install Guide Comments Feed" href="http://gloriouseggroll.tv/arch-linux-efi-install-guide/feed/">
+		<script async="" src="./GloriousEggroll&#39;s Blog » Arch Linux EFI Install Guide_files/analytics.js"></script><script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/gloriouseggroll.tv\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.6.1"}};
+			!function(a,b,c){function d(a){var c,d,e,f,g,h=b.createElement("canvas"),i=h.getContext&&h.getContext("2d"),j=String.fromCharCode;if(!i||!i.fillText)return!1;switch(i.textBaseline="top",i.font="600 32px Arial",a){case"flag":return i.fillText(j(55356,56806,55356,56826),0,0),!(h.toDataURL().length<3e3)&&(i.clearRect(0,0,h.width,h.height),i.fillText(j(55356,57331,65039,8205,55356,57096),0,0),c=h.toDataURL(),i.clearRect(0,0,h.width,h.height),i.fillText(j(55356,57331,55356,57096),0,0),d=h.toDataURL(),c!==d);case"diversity":return i.fillText(j(55356,57221),0,0),e=i.getImageData(16,16,1,1).data,f=e[0]+","+e[1]+","+e[2]+","+e[3],i.fillText(j(55356,57221,55356,57343),0,0),e=i.getImageData(16,16,1,1).data,g=e[0]+","+e[1]+","+e[2]+","+e[3],f!==g;case"simple":return i.fillText(j(55357,56835),0,0),0!==i.getImageData(16,16,1,1).data[0];case"unicode8":return i.fillText(j(55356,57135),0,0),0!==i.getImageData(16,16,1,1).data[0];case"unicode9":return i.fillText(j(55358,56631),0,0),0!==i.getImageData(16,16,1,1).data[0]}return!1}function e(a){var c=b.createElement("script");c.src=a,c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i;for(i=Array("simple","flag","unicode8","diversity","unicode9"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script><script src="./GloriousEggroll&#39;s Blog » Arch Linux EFI Install Guide_files/wp-emoji-release.min.js" type="text/javascript"></script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel="stylesheet" id="sfmsb-style-css" href="./GloriousEggroll&#39;s Blog » Arch Linux EFI Install Guide_files/style.css" type="text/css" media="all">
+<link rel="stylesheet" id="sfmsb-icons-css" href="./GloriousEggroll&#39;s Blog » Arch Linux EFI Install Guide_files/icons.css" type="text/css" media="all">
+<link rel="stylesheet" id="twitch_status-css" href="./GloriousEggroll&#39;s Blog » Arch Linux EFI Install Guide_files/twitch-status.css" type="text/css" media="all">
+<link rel="stylesheet" id="gitsta-style-css" href="./GloriousEggroll&#39;s Blog » Arch Linux EFI Install Guide_files/style(1).css" type="text/css" media="all">
+<link rel="stylesheet" id="bootstrap-css" href="./GloriousEggroll&#39;s Blog » Arch Linux EFI Install Guide_files/bootstrap.css" type="text/css" media="all">
+<link rel="stylesheet" id="font-awesome-css" href="./GloriousEggroll&#39;s Blog » Arch Linux EFI Install Guide_files/font-awesome.css" type="text/css" media="all">
+<link rel="stylesheet" id="octicons-css" href="./GloriousEggroll&#39;s Blog » Arch Linux EFI Install Guide_files/octicons.css" type="text/css" media="all">
+<link rel="stylesheet" id="wptt_front-css" href="./GloriousEggroll&#39;s Blog » Arch Linux EFI Install Guide_files/admin_style.min.css" type="text/css" media="all">
+<script type="text/javascript" src="./GloriousEggroll&#39;s Blog » Arch Linux EFI Install Guide_files/jquery.js"></script>
+<script type="text/javascript" src="./GloriousEggroll&#39;s Blog » Arch Linux EFI Install Guide_files/jquery-migrate.min.js"></script>
+<script type="text/javascript" src="./GloriousEggroll&#39;s Blog » Arch Linux EFI Install Guide_files/front-widget.js"></script>
+<script type="text/javascript" src="./GloriousEggroll&#39;s Blog » Arch Linux EFI Install Guide_files/bootstrap.js"></script>
+<script type="text/javascript" src="./GloriousEggroll&#39;s Blog » Arch Linux EFI Install Guide_files/marked.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var theme = {"template_directory_uri":"http:\/\/gloriouseggroll.tv\/wp-content\/themes\/gitsta"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./GloriousEggroll&#39;s Blog » Arch Linux EFI Install Guide_files/main.js"></script>
+<link rel="https://api.w.org/" href="http://gloriouseggroll.tv/wp-json/">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://gloriouseggroll.tv/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://gloriouseggroll.tv/wp-includes/wlwmanifest.xml"> 
+<link rel="prev" title="OBS Multiplatform Two PC non-partner twitch settings" href="http://gloriouseggroll.tv/obs-multiplatform-two-pc-non-partner-twitch-settings/">
+<link rel="next" title="FFXIV + Arch Linux + wine-staging 1.7.45" href="http://gloriouseggroll.tv/ffxiv-arch-linux-wine-staging-1-7-45/">
+<meta name="generator" content="WordPress 4.6.1">
+<link rel="canonical" href="http://gloriouseggroll.tv/arch-linux-efi-install-guide/">
+<link rel="shortlink" href="http://gloriouseggroll.tv/?p=56">
+<link rel="alternate" type="application/json+oembed" href="http://gloriouseggroll.tv/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fgloriouseggroll.tv%2Farch-linux-efi-install-guide%2F">
+<link rel="alternate" type="text/xml+oembed" href="http://gloriouseggroll.tv/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fgloriouseggroll.tv%2Farch-linux-efi-install-guide%2F&amp;format=xml">
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-74262787-1', 'auto');
+ga('send', 'pageview');
+</script>
+  <script type="text/javascript">
+	var twitchStatus = {"ajaxurl":"http:\/\/gloriouseggroll.tv\/wp-admin\/admin-ajax.php","channels":{"GloriousEggroll":{"name":"GloriousEggroll","selectors":[""]}},"buttonHTML":{"online":"LIVE!","offline":"offline"}};
+	var twitchStatusData = {"GloriousEggroll":{"status":"offline","statusTxt":"Offline","channel":{"mature":true,"status":"HAPPY NEW YEAR!","broadcaster_language":"en","display_name":"GloriousEggroll","game":"Tom Clancy's The Division","language":"en","_id":81198043,"name":"gloriouseggroll","created_at":"2015-01-29T05:56:20Z","updated_at":"2017-01-08T08:00:30Z","delay":null,"logo":"https:\/\/static-cdn.jtvnw.net\/jtv_user_pictures\/gloriouseggroll-profile_image-29a635c16365232e-300x300.png","banner":null,"video_banner":"https:\/\/static-cdn.jtvnw.net\/jtv_user_pictures\/gloriouseggroll-channel_offline_image-fdff87e4ebc2c38d-1920x1080.jpeg","background":null,"profile_banner":"https:\/\/static-cdn.jtvnw.net\/jtv_user_pictures\/gloriouseggroll-profile_banner-978804b36988eb9a-480.png","profile_banner_background_color":null,"partner":false,"url":"https:\/\/www.twitch.tv\/gloriouseggroll","views":23779,"followers":970,"_links":{"self":"https:\/\/api.twitch.tv\/kraken\/channels\/gloriouseggroll","follows":"https:\/\/api.twitch.tv\/kraken\/channels\/gloriouseggroll\/follows","commercial":"https:\/\/api.twitch.tv\/kraken\/channels\/gloriouseggroll\/commercial","stream_key":"https:\/\/api.twitch.tv\/kraken\/channels\/gloriouseggroll\/stream_key","chat":"https:\/\/api.twitch.tv\/kraken\/chat\/gloriouseggroll","subscriptions":"https:\/\/api.twitch.tv\/kraken\/channels\/gloriouseggroll\/subscriptions","editors":"https:\/\/api.twitch.tv\/kraken\/channels\/gloriouseggroll\/editors","teams":"https:\/\/api.twitch.tv\/kraken\/channels\/gloriouseggroll\/teams","videos":"https:\/\/api.twitch.tv\/kraken\/channels\/gloriouseggroll\/videos"}},"stream":null,"playingHTML":"<a href=\"http:\/\/www.twitch.tv\/gloriouseggroll\/profile\" target=\"_blank\">GloriousEggroll<\/a> playing <a href=\"http:\/\/www.twitch.tv\/directory\/game\/Tom Clancy%27s The Division\" target=\"_blank\">Tom Clancy's The Division<\/a>"}};
+  </script>
+  <link rel="stylesheet" href="./GloriousEggroll&#39;s Blog » Arch Linux EFI Install Guide_files/fontello.css">
+  <link rel="stylesheet" href="./GloriousEggroll&#39;s Blog » Arch Linux EFI Install Guide_files/animation.css"><!--[if IE 7]><link rel="stylesheet" href="http://gloriouseggroll.tv/wp-content/plugins/twitch-status/font/fontello/css/fontello-ie7.css"><![endif]-->
+  		<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+		<link rel="icon" href="http://gloriouseggroll.tv/wp-content/uploads/2016/12/cropped-AVATAR-32x32.png" sizes="32x32">
+<link rel="icon" href="http://gloriouseggroll.tv/wp-content/uploads/2016/12/cropped-AVATAR-192x192.png" sizes="192x192">
+<link rel="apple-touch-icon-precomposed" href="http://gloriouseggroll.tv/wp-content/uploads/2016/12/cropped-AVATAR-180x180.png">
+<meta name="msapplication-TileImage" content="http://gloriouseggroll.tv/wp-content/uploads/2016/12/cropped-AVATAR-270x270.png">
+
+<script type="text/javascript" src="./GloriousEggroll&#39;s Blog » Arch Linux EFI Install Guide_files/jscripts.php"></script> 
+    <style type="text/css">.lyte-wrapper-audio div, .lyte-wrapper div {margin:0px; overflow:hidden;} .lyte,.lyMe{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;background-color:#777;} .fourthree .lyMe, .fourthree .lyte {padding-bottom:75%;} .lidget{margin-bottom:5px;} .lidget .lyte, .widget .lyMe {padding-bottom:0!important;height:100%!important;} .lyte-wrapper-audio .lyte{height:38px!important;overflow:hidden;padding:0!important} .lyMe iframe, .lyte iframe,.lyte .pL{position:absolute !important;top:0;left:0;width:100%;height:100%!important;background:no-repeat scroll center #000;background-size:cover;cursor:pointer} .tC{left:0;position:absolute;top:0;width:100%} .tC{background-image:linear-gradient(to bottom,rgba(0,0,0,0.6),rgba(0,0,0,0))} .tT{color:#FFF;font-family:Roboto,sans-serif;font-size:16px;height:auto;text-align:left;padding:5px 10px 50px 10px} .play{background:no-repeat scroll 0 0 transparent;width:88px;height:63px;position:absolute;left:43%;left:calc(50% - 44px);left:-webkit-calc(50% - 44px);top:38%;top:calc(50% - 31px);top:-webkit-calc(50% - 31px);} .widget .play {top:30%;top:calc(45% - 31px);top:-webkit-calc(45% - 31px);transform:scale(0.6);-webkit-transform:scale(0.6);-ms-transform:scale(0.6);} .lyte:hover .play{background-position:0 -65px;} .lyte-audio .pL{max-height:38px!important} .lyte-audio iframe{height:438px!important} .ctrl{background:repeat scroll 0 -220px rgba(0,0,0,0.3);width:100%;height:40px;bottom:0px;left:0;position:absolute;} .lyte-wrapper .ctrl{display:none}.Lctrl{background:no-repeat scroll 0 -137px transparent;width:158px;height:40px;bottom:0;left:0;position:absolute} .Rctrl{background:no-repeat scroll -42px -179px transparent;width:117px;height:40px;bottom:0;right:0;position:absolute;padding-right:10px;}.lyte-audio .play{display:none}.lyte-audio .ctrl{background-color:rgba(0,0,0,1)}.hidden{display:none}</style><style type="text/css">.lyte .ctrl, .lyte .Rctrl, .lyte .Lctrl, .lyte .play { background-image: url(http://gloriouseggroll.tv/wp-content/plugins/wp-youtube-lyte/lyte/lytesprite.png); }</style><style type="text/css">#lyte_MMkST5IjSjY { background-image: url(https://i.ytimg.com/vi/MMkST5IjSjY/maxresdefault.jpg); }</style><style type="text/css">.lyte .ctrl, .lyte .Rctrl, .lyte .Lctrl, .lyte .play { background-image: url(http://gloriouseggroll.tv/wp-content/plugins/wp-youtube-lyte/lyte/lytesprite.png); }</style><style type="text/css">#lyte_0WBB8v-tiz8 { background-image: url(https://i.ytimg.com/vi/0WBB8v-tiz8/hqdefault.jpg); }</style><style type="text/css">.lyte .ctrl, .lyte .Rctrl, .lyte .Lctrl, .lyte .play { background-image: url(http://gloriouseggroll.tv/wp-content/plugins/wp-youtube-lyte/lyte/lytesprite.png); }</style><style type="text/css">#lyte_n5UK66GF99A { background-image: url(https://i.ytimg.com/vi/n5UK66GF99A/maxresdefault.jpg); }</style></head>
+
+    <body class="single single-post postid-56 single-format-standard">
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <!-- Nav button for small resolutions -->
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-menu">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    
+                    <a class="navbar-brand" href="http://gloriouseggroll.tv/">GloriousEggroll's Blog</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <form role="search" method="get" id="searchform" action="http://gloriouseggroll.tv/" class="navbar-form navbar-left">
+    <div>
+        <input type="text" value="" name="s" id="s" placeholder="Search..." class="form-control">
+    </div>
+</form>                    <div class="btn-group pull-right">
+                                                <a href="http://gloriouseggroll.tv/arch-linux-efi-install-guide/#" class="btn navbar-btn btn-default dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> Anonymous <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="http://gloriouseggroll.tv/wp-login.php">Login</a></li>
+                            <li class="divider"></li>
+                            <li><a href="http://gloriouseggroll.tv/wp-login.php?redirect_to=http%3A%2F%2Fgloriouseggroll.tv%2Farch-linux-efi-install-guide%2F">Register</a></li>
+                            <li><a href="http://gloriouseggroll.tv/wp-login.php?action=lostpassword">Lost password</a></li>
+                        </ul>
+                        
+                                            </div>
+                </div>
+            </div>
+        </nav>
+        <!-- Anchor for "Back to top"-Link -->
+        <a name="top"></a>
+            <div class="subhead">
+        <div class="container">
+            <h3><small><a href="http://gloriouseggroll.tv/"><i class="fa fa-chevron-left"></i></a></small> Arch Linux EFI Install Guide</h3>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10">
+                
+                    <div id="post-56" class="item post-56 post type-post status-publish format-standard hentry category-computer-hardware category-computer-software category-linux category-programming">
+    <div name="meta">
+        <p class="text-muted">
+            <i class="fa fa-calendar"></i> June 14, 2015
+            <i class="fa fa-folder-open" style="margin-left: 20px;"></i> 
+            <a href="http://gloriouseggroll.tv/category/computer-hardware/" rel="category tag">Computer Hardware</a>, <a href="http://gloriouseggroll.tv/category/computer-software/" rel="category tag">Computer Software</a>, <a href="http://gloriouseggroll.tv/category/linux/" rel="category tag">Linux</a>, <a href="http://gloriouseggroll.tv/category/programming/" rel="category tag">Programming</a>
+            
+            <span class="pull-right">
+                  
+            </span>
+        </p>
+    </div>
+    <div class="post-content">
+        <p>It’s 7 AM and I am editing this guide, so please bare with me while it looks like a giant blob of text.<br>
+Part 1 Video:<br>
+</p><div class="lyte-wrapper" style="width:1280px;max-width: 100%;margin:5px auto;"><div class="lyte hidef lP" id="WYL_MMkST5IjSjY" itemprop="video" itemscope="" itemtype="http://schema.org/VideoObject"><meta itemprop="thumbnailUrl" content="https://i.ytimg.com/vi/MMkST5IjSjY/maxresdefault.jpg"><meta itemprop="embedURL" content="http://www.youtube.com/embed/MMkST5IjSjY"><meta itemprop="uploadDate" content="2016-02-22T05:46:58.000Z"><div id="lyte_MMkST5IjSjY" data-src="https://i.ytimg.com/vi/MMkST5IjSjY/maxresdefault.jpg" class="pL"><div class="tC"><div class="tT" itemprop="name">2016 Arch Linux EFI Install Guide Part 1 - Preparation and Disk Partitioning</div></div><div class="play"></div><div class="ctrl"><div class="Lctrl"></div><div class="Rctrl"></div></div></div><noscript>&lt;a href="http://youtu.be/MMkST5IjSjY"&gt;&lt;img src="http://i.ytimg.com/vi/MMkST5IjSjY/0.jpg" alt="" width="1280" height="700" /&gt;&lt;/a&gt;</noscript><meta itemprop="description" content="This is the first of a series of guides I am putting up in regards to getting Arch Linux installed (via EFI in this setup) Part 1: https://youtu.be/MMkST5IjSjY Part 2: https://youtu.be/0WBB8v-tiz8 Part 3: https://youtu.be/n5UK66GF99A Rufus: https://rufus.akeo.ie/ Arch Linux ISO Download: https://www.archlinux.org/download/ PART 1: Preparation and Disk Partitioning Preparation -Items necessary -Downloads necessary -Details regarding enabling EFI mode via BIOS -Details regarding booting from USB in EFI mode -Verifying internet connectivity -Verifying EFI mode is enabled Disk Partitioning -Finding all available drives -Wiping the existing partition table -Creating boot partition and the difference between EF00 and EF02 Hex codes -Creating swap partition, the swap debate, choosing a swap size, and the swap 8200 hex code -Creating root and home, the differences between them, and choosing whether to keep them on the same partition -Telling linux which file systems to use for our partition Full Guide: http://gloriouseggroll.tv/?p=56"></div></div><div class="lL" style="max-width:100%;width:1280px;margin:5px auto;">Watch this video <a href="http://youtu.be/MMkST5IjSjY">on YouTube</a>.</div><p></p>
+<p>Part 2 Video:<br>
+</p><div class="lyte-wrapper" style="width:1280px;max-width: 100%;margin:5px auto;"><div class="lyte hidef lP" id="WYL_0WBB8v-tiz8" itemprop="video" itemscope="" itemtype="http://schema.org/VideoObject"><meta itemprop="thumbnailUrl" content="https://i.ytimg.com/vi/0WBB8v-tiz8/hqdefault.jpg"><meta itemprop="embedURL" content="http://www.youtube.com/embed/0WBB8v-tiz8"><meta itemprop="uploadDate" content="2016-02-22T08:47:00.000Z"><div id="lyte_0WBB8v-tiz8" data-src="https://i.ytimg.com/vi/0WBB8v-tiz8/hqdefault.jpg" class="pL"><div class="tC"><div class="tT" itemprop="name">2016 Arch Linux EFI Install Guide Part 2 - Installing Arch and Making it Boot</div></div><div class="play"></div><div class="ctrl"><div class="Lctrl"></div><div class="Rctrl"></div></div></div><noscript>&lt;a href="http://youtu.be/0WBB8v-tiz8"&gt;&lt;img src="http://i.ytimg.com/vi/0WBB8v-tiz8/0.jpg" alt="" width="1280" height="700" /&gt;&lt;/a&gt;</noscript><meta itemprop="description" content="This is the second of a series of guides I am putting up in regards to getting Arch Linux installed (via EFI in this setup) Part 1: https://youtu.be/MMkST5IjSjY Part 2: https://youtu.be/0WBB8v-tiz8 Part 3: https://youtu.be/n5UK66GF99A PART 2: Installing Arch and Making it Boot -Mounting our partitions -Setting up our Arch repository mirrorlist -Installing the Arch base files -Generating an fstab file -Language -Time -Hostname -Enabling multilib and Arch AUR community repositories -Root password and user setup -Setting up sudoers -Adding bash-completion -Installing the bootloader -Creating the bootloader config file -Enabling microcode for Intel processors -Installing video card drivers Full Guide: http://gloriouseggroll.tv/?p=56"></div></div><div class="lL" style="max-width:100%;width:1280px;margin:5px auto;">Watch this video <a href="http://youtu.be/0WBB8v-tiz8">on YouTube</a>.</div><p></p>
+<p>Part 3 Video:<br>
+</p><div class="lyte-wrapper" style="width:1280px;max-width: 100%;margin:5px auto;"><div class="lyte hidef lP" id="WYL_n5UK66GF99A" itemprop="video" itemscope="" itemtype="http://schema.org/VideoObject"><meta itemprop="thumbnailUrl" content="https://i.ytimg.com/vi/n5UK66GF99A/maxresdefault.jpg"><meta itemprop="embedURL" content="http://www.youtube.com/embed/n5UK66GF99A"><meta itemprop="uploadDate" content="2016-02-22T08:48:46.000Z"><div id="lyte_n5UK66GF99A" data-src="https://i.ytimg.com/vi/n5UK66GF99A/maxresdefault.jpg" class="pL"><div class="tC"><div class="tT" itemprop="name">2016 Arch Linux EFI Install Guide Part 3 - Making it user friendly and adding a desktop environment</div></div><div class="play"></div><div class="ctrl"><div class="Lctrl"></div><div class="Rctrl"></div></div></div><noscript>&lt;a href="http://youtu.be/n5UK66GF99A"&gt;&lt;img src="http://i.ytimg.com/vi/n5UK66GF99A/0.jpg" alt="" width="1280" height="700" /&gt;&lt;/a&gt;</noscript><meta itemprop="description" content="This is the last of a series of guides I am putting up in regards to getting Arch Linux installed (via EFI in this setup) Part 1: https://youtu.be/MMkST5IjSjY Part 2: https://youtu.be/0WBB8v-tiz8 Part 3: https://youtu.be/n5UK66GF99A PART 3: Installing Graphics Drivers, Audio, and Desktop -Enabling internet connection -Installing video card drivers -Installing touchpad support -Installing 3D support -Installing X server display manager -Installing a desktop manager Full Guide: http://gloriouseggroll.tv/?p=56"></div></div><div class="lL" style="max-width:100%;width:1280px;margin:5px auto;">Watch this video <a href="http://youtu.be/n5UK66GF99A">on YouTube</a>.</div><p></p>
+<p>——————————-<br>
+TABLE OF CONTENTS:</p>
+<p>PART 1: Preparation and Disk Partitioning</p>
+<p>Preparation<br>
+-Items necessary<br>
+-Downloads necessary<br>
+-Details regarding enabling EFI mode via BIOS<br>
+-Details regarding booting from USB in EFI mode<br>
+-Verifying internet connectivity<br>
+-Verifying EFI mode is enabled</p>
+<p>Disk Partitioning<br>
+-Finding all available drives<br>
+-Wiping the existing partition table<br>
+-Creating boot partition and the difference between EF00 and EF02 Hex codes<br>
+-Creating swap partition, the swap debate, choosing a swap size, and the swap 8200 hex code<br>
+-Creating root and home, the differences between them, and choosing whether to keep them on the same partition<br>
+-Telling linux which file systems to use for our partition</p>
+<p>PART 2: Installing Arch and Making it Boot</p>
+<p>-Mounting our partitions<br>
+-Setting up our Arch repository mirrorlist<br>
+-Installing the Arch base files<br>
+-Generating an fstab file<br>
+-Language<br>
+-Time<br>
+-Hostname<br>
+-Enabling multilib and Arch AUR community repositories<br>
+-Root password and user setup<br>
+-Setting up sudoers<br>
+-Adding bash-completion<br>
+-Installing the bootloader<br>
+-Creating the bootloader config file<br>
+-Enabling microcode for Intel processors<br>
+-Installing video card drivers</p>
+<p>PART 3: Making it user friendly and adding a desktop environment</p>
+<p>-Enabling internet connection<br>
+-Installing touchpad support<br>
+-Installing 3D support<br>
+-Installing X server display manager<br>
+-Installing a desktop manager<br>
+——————————-</p>
+<p>***PART 1: Preparation and Disk Partitioning***</p>
+<p>Preparation:</p>
+<p>-Items necessary<br>
+1. A 4gb or higher USB stick</p>
+<p>-Downloads necessary<br>
+2. Arch linux ISO image<br>
+https://www.archlinux.org/download/</p>
+<p>For creating bootable usb on windows<br>
+3. Rufus</p>
+<p>For creating bootable usb on linux<br>
+3a.<br>
+</p><pre><code>
+sudo dd if=/path_to_arch_.iso of=/dev/sdX
+</code></pre><br>
+(sdX being your USB stick. You can find this withthe command: lsblk)<p></p>
+<p>-Details regarding enabling EFI mode via BIOS<br>
+If you are not sure if your computer is booted/can boot in UEFI/EFI mode, check your motherboard manual. It will tell you how to enable it in the BIOS.</p>
+<p>-Details regarding booting from USB in EFI mode<br>
+You will also need to plug in your new Arch USB stick, then reboot and either go in to your bios and set it as the first boot device, or use the hot key the motherboard specifies during booting to access the boot menu, then select the USB stick as the boot device from that menu. My boot device key is F11, and my BIOS access key is DEL.</p>
+<p>Ok, so we have our USB stick, we plug it in. We boot into the USB stick. We select the first option that reads something like “Arch Linux archiso x86_64 UEFI USB”</p>
+<p>We are now at a screen that reads<br>
+root@archiso ~ #</p>
+<p>-Verifying internet connectivity<br>
+Before we do anything, we need to confirm we have an internet connection, and that we are actually in EFI mode. I use a wired connection, so linux should auto-detect it. I will post a wifi connection sublink when I am able to make it, for now we are going to just use our LAN connection. Test it by typing:</p>
+<p></p><pre><code>
+ping -c 3 www.google.com
+</code></pre><br>
+if you get a response, your internet is working properly.<p></p>
+<p>-Verifying EFI mode is enabled<br>
+Now test if we are using UEFI mode by typing:<br>
+</p><pre><code>
+efivar -l
+</code></pre><br>
+if it spits out a list of stuff (uefi variables) then you are using UEFI mode.<br>
+——————————-<br>
+Disk Partitioning:<p></p>
+<p>-Finding all available drives<br>
+First I need to set up my partitions. I wiped my current partitions to make a fresh install using the whole drive. I need to find out which partitions I want to use, by typing:<br>
+</p><pre><code>
+lsblk
+</code></pre><br>
+This shows me all of the drives availabe.<p></p>
+<p>In my case, I have 3 drives<br>
+sda 238.5GB- this is my 256gb ssd drive<br>
+–sda1 – Existing Partition on drive<br>
+sdb 931.5GB- this is my 1tb storage drive<br>
+–sdb1 – Existing Partition on drive<br>
+sdc – this is the usb stick im using to install arch<br>
+–sdc1 – Existing Partition on drive</p>
+<p>These are known to the system as /dev/sda, /dev/sda1, /dev/sdb, /dev/sdb1 and so forth.</p>
+<p>-Wiping the existing partition table<br>
+For me, /dev/sda is the drive I want to install linux on, which I will be wiping/deleting partitions from. I need to “zap” the current partition table so that I can re-write it as a GPT partition table</p>
+<p>***PLEASE NOTE: THIS WILL WIPE THE ENTIRE DRIVE**<br>
+</p><pre><code>
+gdisk /dev/sdX (x representing your drive. mine is sda)
+x
+z
+y
+y
+</code></pre><br>
+boom. zapped.<p></p>
+<p>-Creating boot partition and the difference between EF00 and EF02 Hex codes<br>
+Now to create my new partitions. So lets start partitioning:<br>
+</p><pre><code>
+cgdisk /dev/sdX
+</code></pre><br>
+Any key to continue<p></p>
+<p>Note: the order you create the partitions is the order they will be listed in, so if I create three partitions in order such as boot, swap, root, home on /dev/sda, then “lsblk” again, they will be listed as:<br>
+sda<br>
+-sda1 (our boot partition)<br>
+-sda2 (our swap partition)<br>
+-sda3 (our root partition)<br>
+-sda4 (our home partition)</p>
+<p>I’m going to create my boot partition first. I am using EFI, so EF00 will be our hex code (NOT EF02. I’ve racked my brain over this error before trying to figure out why EFI system wouldn’t boot). I generally dedicate 1Gb (1024MiB) of space to the boot sector so that I have room to breathe in case I need to change anything or add multiple boot kernels, although arch wiki recommends only 200-300Mb. I also will name it “boot”.<br>
+</p><pre><code>
+[New] Press Enter
+First Sector: Leave this blank -&gt;press Enter
+Size in sectors: 1024MiB -&gt;press Enter
+Hex Code: EF00 press Enter
+Enter new partition name: boot -&gt;press Enter
+</code></pre><p></p>
+<p>Note the 1007KiB existing before the boot partition we just made. This is where the Protective MBR is, and is present on all GPT partition tables. This cannot be removed/deleted. (This is yet another thing I’ve racked my brain over in the past while trying to create boot partitions). It is OK to ignore.</p>
+<p>Now, arrow down to the next free space available, then go to [New] again.</p>
+<p>-Creating swap partition, the swap debate, choosing a swap size, and the swap 8200 hex code<br>
+To swap, or not to swap, that is the question. There has always been a debate on whether or not to create a swap partition when using an SSD or if you have a large amount of memory.</p>
+<p>Short Answer: Yes. Always create a swap partition.</p>
+<p>Detailed Explanation:<br>
+The way the Linux kernel works, swap isn’t only used when you have exhausted all physical memory. The Linux kernel will take applications that are not active (sleeping) and after a period of time, move the application to swap from real memory. The result is that when you need that application, there will be a momentary delay (usually just a second or two) while the application’s memory is read back from swap to RAM.</p>
+<p>If you’re running a laptop or a desktop that you might want to put in ‘hibernate’ mode (Suspend to Disk), then you always want at least as much swap as you have memory. The swap space will be used to store the contents of the RAM in the computer while it ‘sleeps’. Additionally, this allows you to put inactive applications to “sleep”, giving your active applications access to additional RAM.</p>
+<p>In the unlikely event that you run out of RAM – perhaps opening a big file, perheps a long running tab in firefox, it doesn’t matter, in that event your kernel OOM killer will kick in and start killing applications to get memory back. From a developer perspective, you also need to have substantial swap space if you are running Java/Java apps.</p>
+<p>References:<br>
+http://serverfault.com/questions/5841/how-much-swap-space-on-a-high-memory-system<br>
+http://askubuntu.com/a/49130</p>
+<p>Ok, I’ll create a swap partition, but how big?<br>
+Do I want hibernation?</p>
+<p>Here is the Redhat preferred reference table for linux swap partition sizes:<br>
+(Note: Redhat is another Linux Distribution, however linux partitions are utilized the same across all distros)</p>
+<p>Amount of RAM in the system Recommended swap space Recommended swap space<br>
+if allowing for hibernation<br>
+————————— —————————- —————————<br>
+2GB of RAM or less 2 times the amount of RAM 3 times the amount of RAM<br>
+2GB to 8GB of RAM Equal to the amount of RAM 2 times the amount of RAM<br>
+8GB to 64GB of RAM 0.5 times the amount of RAM 1.5 times the amount of RAM<br>
+64GB of RAM or more 4GB of swap space No extra space needed</p>
+<p>In my case I have 16GB of RAM, and wish to use hibernation, so I will create a 24GB Swap drive (16*1.5=24), and of course name it “swap”.<br>
+</p><pre><code>
+[New] Press Enter
+First Sector: Leave this blank -&gt;press Enter
+Size in sectors: 24GiB -&gt;press Enter
+Hex Code: 8200 -&gt;press Enter
+Enter new partition name: swap -&gt;press Enter
+</code></pre><br>
+Ok, boot and swap: done.<p></p>
+<p>-Creating root and home, the differences between them, and choosing whether to keep them on the same partition</p>
+<p>Root:<br>
+Last I’m going to create my root partition. I normally don’t create a home partition, I just store /home inside the root partition since I prefer to not have to worry about the partition size for /home being limited. However<br>
+I will explain both for the sake of user options.</p>
+<p>What is the difference?<br>
+Root-<br>
+In comparison to windows, Root is like your C: drive. Generally you don’t wanna mess with anything inside it unless you know what you’re doing.</p>
+<p>Home-<br>
+Home is where your user files are stored. In windows that would be C:\Users\Someusername, which would then contain My Documents, Downloads, Pictures, Videos etc. All of the folders pertaining to that user. Some may<br>
+prefer to have /home on a seperate partition for security or storage sake.</p>
+<p>Alright, so what size do I need to make them?</p>
+<p>If you are only using root, and storing /home inside of it, you can create root using all of the default values (except giving it the name of “root”) for the new partition options by just pressing Enter.</p>
+<p>If you are creating a seperate /home partition, arch wiki recommends the root partition be 15-20GB, and that the /home partition be whatever size you like (I would use the remainder of the disk). You can do this by first creating the root partition, and specifying 20GiB when choosing the size, naming it “root” (all other options just press Enter), then creating the home partition again using all default options and naming it “home”.</p>
+<p>Arrow down to the next free space available, then go to [New] again.</p>
+<p><strong>For root with /home inside:</strong><br>
+</p><pre><code>
+[New] Press Enter
+First Sector: Leave this blank -&gt;press Enter
+Size in sectors: Leave this blank -&gt;press Enter
+Hex Code: Leave this blank -&gt;press Enter
+Enter new partition name: root -&gt;press Enter
+</code></pre><p></p>
+<p><strong>For root with seperate /home partition:</strong><br>
+</p><pre><code>
+[New] Press Enter
+First Sector: Leave this blank -&gt;press Enter
+Size in sectors: 20GiB -&gt;press Enter
+Hex Code: Leave this blank -&gt;press Enter
+Enter new partition name: root -&gt;press Enter
+</code></pre><br>
+Arrow down to the next free space available, then go to [New] again.<br>
+<pre><code>
+[New] Press Enter
+First Sector: Leave this blank -&gt;press Enter
+Size in sectors: Leave this blank -&gt;press Enter
+Hex Code: Leave this blank -&gt;press Enter
+Enter new partition name: home -&gt;press Enter
+</code></pre><br>
+Arrow over to [Write] to save your new partitions, hit enter, type “yes”, hit enter again.<br>
+Lastly, Arrow over to [Quit] and press enter.<br>
+Reboot<p></p>
+<p>-Telling linux which file systems to use for our partition</p>
+<p>I now need to let linux know the file system for our partitions. For EFI with GPT, boot needs to be Fat32. For swap we simply use mkswap. The rest are default ext4 file systems:<br>
+</p><pre><code>
+mkfs.fat -F32 /dev/sda1
+mkswap /dev/sda2
+swapon /dev/sda2
+mkfs.ext4 /dev/sda3
+mkfs.ext4 /dev/sda4
+</code></pre><br>
+root and home done.<br>
+——————————-<br>
+***PART 2: Installing Arch and Making it Boot***<p></p>
+<p>-Mounting our partitions<br>
+Ok, so we have our partitions. We need to mount them.<br>
+</p><pre><code>
+mount /dev/sda3 /mnt
+mkdir /mnt/boot
+mkdir /mnt/home
+mount /dev/sda1 /mnt/boot
+mount /dev/sda4 /mnt/home
+</code></pre><p></p>
+<p>-Setting up our Arch repository mirrorlist<br>
+Before we initiate the install process let’s select the closest mirror so that you get the best speed while downloading packages. I’ve found the easiest method to do this came via the arch wiki.<br>
+Make a backup:<br>
+</p><pre><code>
+cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup
+</code></pre><br>
+Now, instead of going through the list with nano and trying to scroll down a million mirrors, we’re going to do something different. Run the following sed line to uncomment every mirror:<br>
+<pre><code>
+sed -i 's/^#Server/Server/' /etc/pacman.d/mirrorlist.backup
+</code></pre><br>
+Lets sort that backup. This command will run a check for the top 6 mirrors you have the best connection to, and leave them uncommented while commenting out the rest:<br>
+<pre><code>
+rankmirrors -n 6 /etc/pacman.d/mirrorlist.backup &gt; /etc/pacman.d/mirrorlist
+</code></pre><br>
+-Installing the Arch base files<br>
+Now we install the arch base files and development files. This will take some time.<br>
+<pre><code>
+pacstrap -i /mnt base base-devel
+</code></pre><br>
+For any options that come up just press enter or type y and press enter<p></p>
+<p>-Generating an fstab file<br>
+and now we generate our fstab file<br>
+</p><pre><code>
+genfstab -U -p /mnt &gt;&gt; /mnt/etc/fstab
+</code></pre><br>
+now edit it to make sure an entry is listed for each partition. by typing<br>
+<pre><code>
+nano /mnt/etc/fstab
+</code></pre><br>
+check to see if there is an entry in fstab for swap since we are here. if there is, it should look something like:<br>
+/dev/sda2 none swap defaults 0 0<br>
+or<br>
+UUID=some-crazy-long-random-id none swap defaults 0 0<p></p>
+<p>if you have an SSD hard drive that has TRIM support, change defaults to defaults,discard:<br>
+/dev/sda2 none swap defaults,discard 0 0</p>
+<p>save and exit with ctrl+o, ctrl+x</p>
+<p>Now we are going to chroot into our newly installed system and begin to configure its booting, time, and language<br>
+</p><pre><code>
+arch-chroot /mnt
+</code></pre><br>
+-Language<br>
+Create locale file:<br>
+<pre><code>
+nano /etc/locale.gen
+</code></pre><br>
+Uncomment your locale. I uncommented en_US.UTF-8. You can search the file for it by typing ctrl+W, type en_US.UTF-8, hit enter, then uncomment it and press ctrl+x to exit<br>
+Now generate that locale by typing:<br>
+<pre><code>
+locale-gen
+</code></pre><br>
+and then set it as your language with:<br>
+<pre><code>
+echo LANG=en_US.UTF-8 &gt; /etc/locale.conf
+export LANG=en_US.UTF-8
+</code></pre><br>
+-Time<br>
+List the available time zone info with<br>
+<pre><code>
+ls /usr/share/zoneinfo/
+</code></pre><br>
+Then link the appropriate one via something like:<br>
+<pre><code>
+ln -s /usr/share/zoneinfo/your-time-zone &gt; /etc/localtime
+</code></pre><br>
+Mine for example was:<br>
+<pre><code>
+ln -s /usr/share/zoneinfo/America/New_York &gt; /etc/localtime
+</code></pre><br>
+Now the hardware clock:<br>
+<pre><code>
+hwclock --systohc --utc
+</code></pre><br>
+-Hostname<br>
+This is the name of your machine, when used it will show @hostnameyoupick. I used shittywok because southpark ;x.<br>
+<pre><code>
+echo shittywok &gt; /etc/hostname
+</code></pre><p></p>
+<p>-Enabling multilib and Arch AUR community repositories<br>
+If you are running a 64bit system then you need to enable the multilib repository. Open the pacman.conf file using nano:<br>
+</p><pre><code>
+nano /etc/pacman.conf
+</code></pre><br>
+Scroll down and un-comment the multilib repo:<br>
+<pre><code>
+[multilib]
+Include = /etc/pacman.d/mirrorlist
+</code></pre><br>
+While we are still inside pacman.conf file, let’s also add the AUR repo so we can easily install packages from AUR. Add these lines at the bottom of the file:<br>
+<pre><code>
+[archlinuxfr]
+SigLevel = Never
+Server = http://repo.archlinux.fr/$arch
+</code></pre><br>
+then save and close, and update with:<br>
+<pre><code>
+pacman -Sy
+</code></pre><br>
+optionally, update the system with -Syu instead<p></p>
+<p>-Root password and user setup<br>
+First set a password for root with:<br>
+</p><pre><code>
+passwd
+</code></pre><p></p>
+<p>Now add a default user with:<br>
+</p><pre><code>
+useradd -m -g users -G wheel,storage,power -s /bin/bash someusername
+</code></pre><p></p>
+<p>and set a pass for that user:<br>
+</p><pre><code>
+passwd someusername
+</code></pre><br>
+-Setting up sudoers<p></p>
+<p>Now we have to edit the sudoers file to give this user the much needed sudo powers. Don\92t open this file with a regular editor; it must be edited with visudo command.<br>
+</p><pre><code>
+EDITOR=nano visudo
+</code></pre><br>
+Uncomment:<br>
+<pre><code>
+%wheel ALL=(ALL) ALL
+</code></pre><br>
+And we’re going to make sudoers require typing the root password instead of their own password by adding:<br>
+<pre><code>
+Defaults rootpw
+</code></pre><br>
+Save and close the file.<p></p>
+<p>Lastly we’re going to install bash-completion which makes it easier with auto-complete of commands and package names.<br>
+</p><pre><code>
+pacman -S bash-completion
+</code></pre><br>
+-Installing the bootloader<br>
+Now to actually make our install boot without a usb drive.<br>
+First we need to double check to see if our EFI variables have already been mounted or not<br>
+<pre><code>
+mount -t efivarfs efivarfs /sys/firmware/efi/efivars
+</code></pre><br>
+If this says already mounted just ignore and keep following this guide.<p></p>
+<p>As we are doing an UEFI installation of archlinux we are going to use Gummiboot as our boot manager, which has now been incorporated into bootctl/systemd-boot.<br>
+</p><pre><code>
+bootctl install
+</code></pre><br>
+Next, we need the PARTUUID of the /root partition in order to add it to our bootloader configuration.<br>
+Do this by typing:<br>
+<pre><code>
+blkid -s PARTUUID -o value /dev/sdxY
+</code></pre><br>
+Where ‘x’ is the device letter and ‘Y’ is the partition number for the root partition. In our case it was sda1<br>
+Write the id down that it spits out, you’ll have to type it in the next part.<br>
+Now you will need to manually create a configuration file to add an entry for Arch Linux to the gummiboot manager:<br>
+<pre><code>
+nano /boot/loader/entries/arch.conf
+</code></pre><br>
+Type the following, make sure sdaX is your root partition (mine is sda3):<br>
+<pre><code>
+title Arch Linux
+linux /vmlinuz-linux
+initrd /initramfs-linux.img
+options root=PARTUUID=the-id-you-just-copied rw
+</code></pre><br>
+save and exit.<p></p>
+<p>NOTE: Intel processors</p>
+<p>Processor manufacturers release stability and security updates to the processor microcode. While microcode can be updated through the BIOS, the Linux kernel is also able to apply these updates during boot. These updates provide bug fixes that can be critical to the stability of your system. Without these updates, you<br>
+may experience spurious crashes or unexpected system halts that can be difficult to track down.</p>
+<p>Users of CPUs belonging to the Intel Haswell and Broadwell processor families in particular must install these microcode updates to ensure system stability. But all Intel users should install the updates as a matter of course.</p>
+<p>For AMD processors the microcode updates are available in linux-firmware, which is installed as part of the base system. No further action is needed for AMD users.</p>
+<p>Since I have an Intel i7 4770k, which is a Haswell processor, we need this installed:<br>
+</p><pre><code>
+pacman -S intel-ucode
+</code></pre><br>
+then we will have to update our gummiboot by adding another initrd line for intel-ucode as follows:<br>
+<pre><code>
+initrd /intel-ucode.img
+initrd /initramfs-linux.img
+</code></pre><p></p>
+<p>Now before we exit this, we are also going to set up our graphics drivers BEFORE we boot into the system. Reason being Arch’s kernel is set to use nouveau drivers by default for nvidia cards, and some cards don’t work properly and will cause a freeze/hang (such as my gtx 980 ti..)</p>
+<p>I assume you know which GPU you are using. Arch wiki has done a great job at documenting which drivers you need to install for your hardware.<br>
+I have an Nvidia GTX 980 TI, so my latest drivers will just be nvidia. I also want the multilib drivers, so I will install lib32-nvidia-libgl:<br>
+</p><pre><code>
+sudo pacman -S nvidia nvidia-libgl lib32-nvidia-libgl lib32-nvidia-utils
+</code></pre><p></p>
+<p>Now you should be able to reboot into your system without the USB stick!<br>
+Type the following commands and then remove the USB stick:<br>
+</p><pre><code>
+exit
+umount -R /mnt
+reboot
+</code></pre><p></p>
+<p>——————————-</p>
+<p>***PART 3:Making it user friendly and adding a desktop environment***<br>
+-Enabling internet connection</p>
+<p>Now that we’ve rebooted, lets get our internet to stay on, and install an interface<br>
+first lets see what network adapters were working with via<br>
+</p><pre><code>
+ip link
+</code></pre><br>
+Ignore the one listed as lo, that is loopback and is always listed.<br>
+mine was listed as<br>
+enp5s0<br>
+so we’re going to enable it via systemctl<br>
+<pre><code>
+sudo systemctl enable dhcpcd@enp5s0.service
+</code></pre><br>
+reboot<p></p>
+<p>-Installing touchpad support<br>
+If you are on a laptop and need touchpad support also type<br>
+</p><pre><code>
+sudo pacman -S xf86-input-synaptics
+</code></pre><br>
+-Installing 3D support<br>
+now we add 3d support<br>
+<pre><code>
+sudo pacman -S mesa
+</code></pre><br>
+-Installing X server display manager<br>
+now install X, which is our display manager<br>
+<pre><code>
+sudo pacman -S xorg-server xorg-server-utils xorg-xinit xorg-twm xorg-xclock xterm
+</code></pre><p></p>
+<p>-Installing a desktop manager<br>
+Let’s give ourselves an actual interface to log in to, so we will finally feel at home with our new Arch install<br>
+</p><pre><code>
+sudo pacman -S gnome gnome-extra
+sudo pacman -S gdm
+sudo systemctl enable gdm.service
+sudo pacman -S gnome-tweak-tool
+yaourt -S gnome-software
+</code></pre><p></p>
+<p>DONE! ENJOY YOUR NEW ARCH LINUX SYSTEM! I HOPE THIS GUIDE HELPED!!!<br>
+Feel free to subscribe to my youtube channel for more linux tutorials and plenty of other stuff!<br>
+<a href="http://gloriouseggroll.tv/arch-linux-efi-install-guide/youtube.com/gloriouseggrolltv">youtube.com/gloriouseggrolltv<br>
+</a></p>
+<p>References:<br>
+<a href="http://serverfault.com/questions/5841/how-much-swap-space-on-a-high-memory-system">http://serverfault.com/questions/5841/how-much-swap-space-on-a-high-memory-system</a><br>
+<a href="http://askubuntu.com/a/49130">http://askubuntu.com/a/49130</a><br>
+<a href="http://www.tomshardware.com/faq/id-1860905/install-arch-linux-uefi.html">http://www.tomshardware.com/faq/id-1860905/install-arch-linux-uefi.html</a><br>
+<a href="http://www.linuxveda.com/2014/06/07/arch-linux-tutorial/">http://www.linuxveda.com/2014/06/07/arch-linux-tutorial/</a><br>
+<a href="https://wiki.archlinux.org/">https://wiki.archlinux.org/</a></p>
+    </div>
+</div>                
+                    <div class="text-right">
+                                        </div>
+
+                    
+<!-- Comments anchor -->
+<a name="comments"></a>
+
+    <header class="page-header text-right">
+        <h4 class="comments-title">
+            31 comments        </h4>
+    </header>
+
+    <ol class="comment-list media-list">
+        <li id="comment-464" class="comment even thread-even depth-1 parent">
+    <article id="div-comment-464" class="comment-body media">
+        <div class="pull-left">
+            <img alt="" src="./GloriousEggroll&#39;s Blog » Arch Linux EFI Install Guide_files/88b59bd65eaa86d201f25304435385a4" srcset="http://2.gravatar.com/avatar/88b59bd65eaa86d201f25304435385a4?s=100&amp;d=mm&amp;r=g 2x" class="avatar media-object img-rounded avatar-50 photo" height="50" width="50">        </div>
+
+        <div class="media-body comment">
+            <div class="media-body-wrap panel panel-default  comment">
+                <div class="panel-heading">
+                    <b>joe</b>
+                    
+                                        
+                    <span class="text-muted"><small>11 months ago</small></span>
+
+                    <span class="pull-right">
+                                                <a rel="nofollow" class="comment-reply-link btn btn-default btn-xs" data-scroll="true" href="http://gloriouseggroll.tv/arch-linux-efi-install-guide/?replytocom=464#respond" onclick="return addComment.moveForm( &quot;comment-464&quot;, &quot;464&quot;, &quot;respond&quot;, &quot;56&quot; )" aria-label="Reply to joe" data-vivaldi-spatnav-clickable="1"><i class="fa fa-reply"></i> Reply</a>                    </span>
+
+                                    </div>
+
+                <div class="comment-content panel-body">
+                    <p>thanks very much for your guide, all up and running perfectly. Is it possible to add expand on your boot loader section to include how you can ad in windows 10 to the boot loader? Having quite a headache trying to work this out.</p>
+                </div>
+            </div>
+        </div>
+
+    </article>
+</li>
+<ul class="children">
+<li id="comment-472" class="comment byuser comment-author-gloriouseggroll bypostauthor odd alt depth-2">
+    <article id="div-comment-472" class="comment-body media">
+        <div class="pull-left">
+            <img alt="" src="./GloriousEggroll&#39;s Blog » Arch Linux EFI Install Guide_files/61477473187667a091e626729efff37a" srcset="http://0.gravatar.com/avatar/61477473187667a091e626729efff37a?s=100&amp;d=mm&amp;r=g 2x" class="avatar media-object img-rounded avatar-50 photo" height="50" width="50">        </div>
+
+        <div class="media-body comment">
+            <div class="media-body-wrap panel panel-default  comment">
+                <div class="panel-heading">
+                    <b>GloriousEggroll</b>
+                    
+                                        <a href="http://gloriouseggroll.tv/" target="_blank" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="http://gloriouseggroll.tv"><i class="fa fa-home"></i></a>
+                                        
+                    <span class="text-muted"><small>11 months ago</small></span>
+
+                    <span class="pull-right">
+                                                <a rel="nofollow" class="comment-reply-link btn btn-default btn-xs" data-scroll="true" href="http://gloriouseggroll.tv/arch-linux-efi-install-guide/?replytocom=472#respond" onclick="return addComment.moveForm( &quot;comment-472&quot;, &quot;472&quot;, &quot;respond&quot;, &quot;56&quot; )" aria-label="Reply to GloriousEggroll" data-vivaldi-spatnav-clickable="1"><i class="fa fa-reply"></i> Reply</a>                    </span>
+
+                                    </div>
+
+                <div class="comment-content panel-body">
+                    <p>Sure, I actually plan on doing another article shortly regarding dual booting as many people have asked me about it.</p>
+                </div>
+            </div>
+        </div>
+
+    </article>
+</li>
+<!-- #comment-## -->
+</ul><!-- .children -->
+<!-- #comment-## -->
+<li id="comment-514" class="comment even thread-odd thread-alt depth-1 parent">
+    <article id="div-comment-514" class="comment-body media">
+        <div class="pull-left">
+            <img alt="" src="./GloriousEggroll&#39;s Blog » Arch Linux EFI Install Guide_files/d54d378b887055d5a6f3ffe1d6f574ef" srcset="http://1.gravatar.com/avatar/d54d378b887055d5a6f3ffe1d6f574ef?s=100&amp;d=mm&amp;r=g 2x" class="avatar media-object img-rounded avatar-50 photo" height="50" width="50">        </div>
+
+        <div class="media-body comment">
+            <div class="media-body-wrap panel panel-default  comment">
+                <div class="panel-heading">
+                    <b>Anonymous</b>
+                    
+                                        
+                    <span class="text-muted"><small>10 months ago</small></span>
+
+                    <span class="pull-right">
+                                                <a rel="nofollow" class="comment-reply-link btn btn-default btn-xs" data-scroll="true" href="http://gloriouseggroll.tv/arch-linux-efi-install-guide/?replytocom=514#respond" onclick="return addComment.moveForm( &quot;comment-514&quot;, &quot;514&quot;, &quot;respond&quot;, &quot;56&quot; )" aria-label="Reply to Anonymous" data-vivaldi-spatnav-clickable="1"><i class="fa fa-reply"></i> Reply</a>                    </span>
+
+                                    </div>
+
+                <div class="comment-content panel-body">
+                    <p>what about grub ?</p>
+                </div>
+            </div>
+        </div>
+
+    </article>
+</li>
+<ul class="children">
+<li id="comment-515" class="comment byuser comment-author-gloriouseggroll bypostauthor odd alt depth-2">
+    <article id="div-comment-515" class="comment-body media">
+        <div class="pull-left">
+            <img alt="" src="./GloriousEggroll&#39;s Blog » Arch Linux EFI Install Guide_files/61477473187667a091e626729efff37a" srcset="http://0.gravatar.com/avatar/61477473187667a091e626729efff37a?s=100&amp;d=mm&amp;r=g 2x" class="avatar media-object img-rounded avatar-50 photo" height="50" width="50">        </div>
+
+        <div class="media-body comment">
+            <div class="media-body-wrap panel panel-default  comment">
+                <div class="panel-heading">
+                    <b>GloriousEggroll</b>
+                    
+                                        <a href="http://gloriouseggroll.tv/" target="_blank" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="http://gloriouseggroll.tv"><i class="fa fa-home"></i></a>
+                                        
+                    <span class="text-muted"><small>10 months ago</small></span>
+
+                    <span class="pull-right">
+                                                <a rel="nofollow" class="comment-reply-link btn btn-default btn-xs" data-scroll="true" href="http://gloriouseggroll.tv/arch-linux-efi-install-guide/?replytocom=515#respond" onclick="return addComment.moveForm( &quot;comment-515&quot;, &quot;515&quot;, &quot;respond&quot;, &quot;56&quot; )" aria-label="Reply to GloriousEggroll" data-vivaldi-spatnav-clickable="1"><i class="fa fa-reply"></i> Reply</a>                    </span>
+
+                                    </div>
+
+                <div class="comment-content panel-body">
+                    <p>grub is not used in efi setup as gummiboot/systemctl replaces it</p>
+                </div>
+            </div>
+        </div>
+
+    </article>
+</li>
+<!-- #comment-## -->
+</ul><!-- .children -->
+<!-- #comment-## -->
+<li id="comment-538" class="comment even thread-even depth-1 parent">
+    <article id="div-comment-538" class="comment-body media">
+        <div class="pull-left">
+            <img alt="" src="./GloriousEggroll&#39;s Blog » Arch Linux EFI Install Guide_files/0867296f34fff9f6520b8adbd540c8e7" srcset="http://0.gravatar.com/avatar/0867296f34fff9f6520b8adbd540c8e7?s=100&amp;d=mm&amp;r=g 2x" class="avatar media-object img-rounded avatar-50 photo" height="50" width="50">        </div>
+
+        <div class="media-body comment">
+            <div class="media-body-wrap panel panel-default  comment">
+                <div class="panel-heading">
+                    <b>sze5003</b>
+                    
+                                        
+                    <span class="text-muted"><small>10 months ago</small></span>
+
+                    <span class="pull-right">
+                                                <a rel="nofollow" class="comment-reply-link btn btn-default btn-xs" data-scroll="true" href="http://gloriouseggroll.tv/arch-linux-efi-install-guide/?replytocom=538#respond" onclick="return addComment.moveForm( &quot;comment-538&quot;, &quot;538&quot;, &quot;respond&quot;, &quot;56&quot; )" aria-label="Reply to sze5003" data-vivaldi-spatnav-clickable="1"><i class="fa fa-reply"></i> Reply</a>                    </span>
+
+                                    </div>
+
+                <div class="comment-content panel-body">
+                    <p>Hi, Loved the Guide. I have been trying to install Arch on my Dell Xps 15 9550 laptop and succeeded using your videos here. Only issue I have is I can not install any Desktop environment. Gnome just installs and then fails when it boots to it. </p>
+<p>The laptop has an nvidia gtx 960m as well as intel 530 graphics so I think I’m installing the wrong graphics packages? For cards like mine, which nvidia packages should I use. The rest of the install and configuration goes without a hitch, only thing I am missing is the GUI.</p>
+                </div>
+            </div>
+        </div>
+
+    </article>
+</li>
+<ul class="children">
+<li id="comment-539" class="comment byuser comment-author-gloriouseggroll bypostauthor odd alt depth-2">
+    <article id="div-comment-539" class="comment-body media">
+        <div class="pull-left">
+            <img alt="" src="./GloriousEggroll&#39;s Blog » Arch Linux EFI Install Guide_files/61477473187667a091e626729efff37a" srcset="http://0.gravatar.com/avatar/61477473187667a091e626729efff37a?s=100&amp;d=mm&amp;r=g 2x" class="avatar media-object img-rounded avatar-50 photo" height="50" width="50">        </div>
+
+        <div class="media-body comment">
+            <div class="media-body-wrap panel panel-default  comment">
+                <div class="panel-heading">
+                    <b>GloriousEggroll</b>
+                    
+                                        <a href="http://gloriouseggroll.tv/" target="_blank" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="http://gloriouseggroll.tv"><i class="fa fa-home"></i></a>
+                                        
+                    <span class="text-muted"><small>10 months ago</small></span>
+
+                    <span class="pull-right">
+                                                <a rel="nofollow" class="comment-reply-link btn btn-default btn-xs" data-scroll="true" href="http://gloriouseggroll.tv/arch-linux-efi-install-guide/?replytocom=539#respond" onclick="return addComment.moveForm( &quot;comment-539&quot;, &quot;539&quot;, &quot;respond&quot;, &quot;56&quot; )" aria-label="Reply to GloriousEggroll" data-vivaldi-spatnav-clickable="1"><i class="fa fa-reply"></i> Reply</a>                    </span>
+
+                                    </div>
+
+                <div class="comment-content panel-body">
+                    <p>Hey sorry for the late reply here! I’ve actually gotten this question quite a bit, for laptops and nvidia you should setup/install bumblebee:</p>
+<p><a href="https://wiki.archlinux.org/index.php/bumblebee#Installing_Bumblebee_with_Intel.2FNVIDIA" rel="nofollow">https://wiki.archlinux.org/index.php/bumblebee#Installing_Bumblebee_with_Intel.2FNVIDIA</a></p>
+                </div>
+            </div>
+        </div>
+
+    </article>
+</li>
+<!-- #comment-## -->
+</ul><!-- .children -->
+<!-- #comment-## -->
+<li id="comment-547" class="comment even thread-odd thread-alt depth-1">
+    <article id="div-comment-547" class="comment-body media">
+        <div class="pull-left">
+            <img alt="" src="./GloriousEggroll&#39;s Blog » Arch Linux EFI Install Guide_files/af2ba51b1aa7f319a42cec54457b8230" srcset="http://1.gravatar.com/avatar/af2ba51b1aa7f319a42cec54457b8230?s=100&amp;d=mm&amp;r=g 2x" class="avatar media-object img-rounded avatar-50 photo" height="50" width="50">        </div>
+
+        <div class="media-body comment">
+            <div class="media-body-wrap panel panel-default  comment">
+                <div class="panel-heading">
+                    <b>luiz</b>
+                    
+                                        
+                    <span class="text-muted"><small>10 months ago</small></span>
+
+                    <span class="pull-right">
+                                                <a rel="nofollow" class="comment-reply-link btn btn-default btn-xs" data-scroll="true" href="http://gloriouseggroll.tv/arch-linux-efi-install-guide/?replytocom=547#respond" onclick="return addComment.moveForm( &quot;comment-547&quot;, &quot;547&quot;, &quot;respond&quot;, &quot;56&quot; )" aria-label="Reply to luiz" data-vivaldi-spatnav-clickable="1"><i class="fa fa-reply"></i> Reply</a>                    </span>
+
+                                    </div>
+
+                <div class="comment-content panel-body">
+                    <p>Hey, man,</p>
+<p>nice tutorial, but I followed it 3 times, and all of them I got a “mount: unknown filesystem type ‘vfat'” error…</p>
+<p>any clues?</p>
+                </div>
+            </div>
+        </div>
+
+    </article>
+</li>
+<!-- #comment-## -->
+<li id="comment-550" class="comment odd alt thread-even depth-1">
+    <article id="div-comment-550" class="comment-body media">
+        <div class="pull-left">
+            <img alt="" src="./GloriousEggroll&#39;s Blog » Arch Linux EFI Install Guide_files/3500c02ebdbafe16eb8681162c7be25e" srcset="http://0.gravatar.com/avatar/3500c02ebdbafe16eb8681162c7be25e?s=100&amp;d=mm&amp;r=g 2x" class="avatar media-object img-rounded avatar-50 photo" height="50" width="50">        </div>
+
+        <div class="media-body comment">
+            <div class="media-body-wrap panel panel-default  comment">
+                <div class="panel-heading">
+                    <b>LiquidFlame</b>
+                    
+                                        
+                    <span class="text-muted"><small>9 months ago</small></span>
+
+                    <span class="pull-right">
+                                                <a rel="nofollow" class="comment-reply-link btn btn-default btn-xs" data-scroll="true" href="http://gloriouseggroll.tv/arch-linux-efi-install-guide/?replytocom=550#respond" onclick="return addComment.moveForm( &quot;comment-550&quot;, &quot;550&quot;, &quot;respond&quot;, &quot;56&quot; )" aria-label="Reply to LiquidFlame" data-vivaldi-spatnav-clickable="1"><i class="fa fa-reply"></i> Reply</a>                    </span>
+
+                                    </div>
+
+                <div class="comment-content panel-body">
+                    <p>Thank you so much for this guide. It made installing Arch Linux a breeze with having this along with the beginner guide. To bad that there doesn’t seem to be a way to get Arch Linux to work with the secure boot option, cause it is kind of a nice option for those of us that are also using a Windows. Be sure to make a guide for secure boot, if you ever figure it out. Thanks again!</p>
+                </div>
+            </div>
+        </div>
+
+    </article>
+</li>
+<!-- #comment-## -->
+<li id="comment-551" class="comment even thread-odd thread-alt depth-1">
+    <article id="div-comment-551" class="comment-body media">
+        <div class="pull-left">
+            <img alt="" src="./GloriousEggroll&#39;s Blog » Arch Linux EFI Install Guide_files/3500c02ebdbafe16eb8681162c7be25e" srcset="http://0.gravatar.com/avatar/3500c02ebdbafe16eb8681162c7be25e?s=100&amp;d=mm&amp;r=g 2x" class="avatar media-object img-rounded avatar-50 photo" height="50" width="50">        </div>
+
+        <div class="media-body comment">
+            <div class="media-body-wrap panel panel-default  comment">
+                <div class="panel-heading">
+                    <b>LiquidFlame</b>
+                    
+                                        
+                    <span class="text-muted"><small>9 months ago</small></span>
+
+                    <span class="pull-right">
+                                                <a rel="nofollow" class="comment-reply-link btn btn-default btn-xs" data-scroll="true" href="http://gloriouseggroll.tv/arch-linux-efi-install-guide/?replytocom=551#respond" onclick="return addComment.moveForm( &quot;comment-551&quot;, &quot;551&quot;, &quot;respond&quot;, &quot;56&quot; )" aria-label="Reply to LiquidFlame" data-vivaldi-spatnav-clickable="1"><i class="fa fa-reply"></i> Reply</a>                    </span>
+
+                                    </div>
+
+                <div class="comment-content panel-body">
+                    <p>I spoke to soon. Everything seems to work right, able to boot into gnome, but after 5 mins it dumps me into the screenshot linked below. Then after another 5 mins, it sends me back to the gnome login screen. Any idea what’s going on? Is this related to the intel-ucode?</p>
+<p>PC Specs:<br>
+CPU: i7-6700K<br>
+GPU: Gigabyte GTX 980 To<br>
+MB: ASUS Maximus VIII hero<br>
+RAM: G.SKILL Ripjaws V Series 16GB DDR4 2666<br>
+COOLER: Corsair H100i GTX<br>
+PSU: EVGA SuperNOVA 650W<br>
+HD: 1x WD Blue 1TB 7200 RPM (Storage)<br>
+        1x Crucial 250GB SSD (Windows 10 64-bit)<br>
+        1x WD 160GB 7200 RPM (Arch Linux)</p>
+<p><a href="http://imgur.com/sH3Wzp1" rel="nofollow">http://imgur.com/sH3Wzp1</a></p>
+                </div>
+            </div>
+        </div>
+
+    </article>
+</li>
+<!-- #comment-## -->
+<li id="comment-552" class="comment odd alt thread-even depth-1">
+    <article id="div-comment-552" class="comment-body media">
+        <div class="pull-left">
+            <img alt="" src="./GloriousEggroll&#39;s Blog » Arch Linux EFI Install Guide_files/4b9f0d0d4e5d29e1f200c2d2bda51e95" srcset="http://1.gravatar.com/avatar/4b9f0d0d4e5d29e1f200c2d2bda51e95?s=100&amp;d=mm&amp;r=g 2x" class="avatar media-object img-rounded avatar-50 photo" height="50" width="50">        </div>
+
+        <div class="media-body comment">
+            <div class="media-body-wrap panel panel-default  comment">
+                <div class="panel-heading">
+                    <b>Venkatesh K L</b>
+                    
+                                        
+                    <span class="text-muted"><small>9 months ago</small></span>
+
+                    <span class="pull-right">
+                                                <a rel="nofollow" class="comment-reply-link btn btn-default btn-xs" data-scroll="true" href="http://gloriouseggroll.tv/arch-linux-efi-install-guide/?replytocom=552#respond" onclick="return addComment.moveForm( &quot;comment-552&quot;, &quot;552&quot;, &quot;respond&quot;, &quot;56&quot; )" aria-label="Reply to Venkatesh K L" data-vivaldi-spatnav-clickable="1"><i class="fa fa-reply"></i> Reply</a>                    </span>
+
+                                    </div>
+
+                <div class="comment-content panel-body">
+                    <p>Great guide… Everything working like a charm. I have a few doubts, if you could throw some light?<br>
+Earlier was running mbr with grub but my disk was partitioned BTRFS, thanks to BTRFS error cannot find root 8, this time I decided to go with EXT4. Eventhough boot time upto login is roughly about the same, after that login seems to take quite longer! The DE is Cinnamon in both the cases and installed Softwares and the ones set to autostart are all the same. And the HDD is a traditional 5400rpm disk not SSD. So no changes except the file system! Can there be significant difference in speed because of that?</p>
+<p>Also can you make a guide for Secure Boot installation of Arch as and when you find time?</p>
+<p>Thanks.</p>
+                </div>
+            </div>
+        </div>
+
+    </article>
+</li>
+<!-- #comment-## -->
+<li id="comment-554" class="comment even thread-odd thread-alt depth-1">
+    <article id="div-comment-554" class="comment-body media">
+        <div class="pull-left">
+            <img alt="" src="./GloriousEggroll&#39;s Blog » Arch Linux EFI Install Guide_files/133767ef655f3c14ff21614e8c3c5fd5" srcset="http://1.gravatar.com/avatar/133767ef655f3c14ff21614e8c3c5fd5?s=100&amp;d=mm&amp;r=g 2x" class="avatar media-object img-rounded avatar-50 photo" height="50" width="50">        </div>
+
+        <div class="media-body comment">
+            <div class="media-body-wrap panel panel-default  comment">
+                <div class="panel-heading">
+                    <b>Anonymous</b>
+                    
+                                        
+                    <span class="text-muted"><small>9 months ago</small></span>
+
+                    <span class="pull-right">
+                                                <a rel="nofollow" class="comment-reply-link btn btn-default btn-xs" data-scroll="true" href="http://gloriouseggroll.tv/arch-linux-efi-install-guide/?replytocom=554#respond" onclick="return addComment.moveForm( &quot;comment-554&quot;, &quot;554&quot;, &quot;respond&quot;, &quot;56&quot; )" aria-label="Reply to Anonymous" data-vivaldi-spatnav-clickable="1"><i class="fa fa-reply"></i> Reply</a>                    </span>
+
+                                    </div>
+
+                <div class="comment-content panel-body">
+                    <p>Hi, I’m trying to install Arch on my Acer Aspire E5-573G, and whenever I type nomodeset(space) and hit enter the screen is frozen black and it doesn’t boot. Any help?</p>
+                </div>
+            </div>
+        </div>
+
+    </article>
+</li>
+<!-- #comment-## -->
+<li id="comment-555" class="comment odd alt thread-even depth-1">
+    <article id="div-comment-555" class="comment-body media">
+        <div class="pull-left">
+            <img alt="" src="./GloriousEggroll&#39;s Blog » Arch Linux EFI Install Guide_files/31648e62a06b29aadc72f6cef99da833" srcset="http://0.gravatar.com/avatar/31648e62a06b29aadc72f6cef99da833?s=100&amp;d=mm&amp;r=g 2x" class="avatar media-object img-rounded avatar-50 photo" height="50" width="50">        </div>
+
+        <div class="media-body comment">
+            <div class="media-body-wrap panel panel-default  comment">
+                <div class="panel-heading">
+                    <b>Chris</b>
+                    
+                                        
+                    <span class="text-muted"><small>8 months ago</small></span>
+
+                    <span class="pull-right">
+                                                <a rel="nofollow" class="comment-reply-link btn btn-default btn-xs" data-scroll="true" href="http://gloriouseggroll.tv/arch-linux-efi-install-guide/?replytocom=555#respond" onclick="return addComment.moveForm( &quot;comment-555&quot;, &quot;555&quot;, &quot;respond&quot;, &quot;56&quot; )" aria-label="Reply to Chris" data-vivaldi-spatnav-clickable="1"><i class="fa fa-reply"></i> Reply</a>                    </span>
+
+                                    </div>
+
+                <div class="comment-content panel-body">
+                    <p>What if efivar isn’t mounted&gt;</p>
+                </div>
+            </div>
+        </div>
+
+    </article>
+</li>
+<!-- #comment-## -->
+<li id="comment-556" class="comment even thread-odd thread-alt depth-1 parent">
+    <article id="div-comment-556" class="comment-body media">
+        <div class="pull-left">
+            <img alt="" src="./GloriousEggroll&#39;s Blog » Arch Linux EFI Install Guide_files/ae43b0ff760bf161d3b4e4abcc56e636" srcset="http://1.gravatar.com/avatar/ae43b0ff760bf161d3b4e4abcc56e636?s=100&amp;d=mm&amp;r=g 2x" class="avatar media-object img-rounded avatar-50 photo" height="50" width="50">        </div>
+
+        <div class="media-body comment">
+            <div class="media-body-wrap panel panel-default  comment">
+                <div class="panel-heading">
+                    <b>Scoot</b>
+                    
+                                        
+                    <span class="text-muted"><small>8 months ago</small></span>
+
+                    <span class="pull-right">
+                                                <a rel="nofollow" class="comment-reply-link btn btn-default btn-xs" data-scroll="true" href="http://gloriouseggroll.tv/arch-linux-efi-install-guide/?replytocom=556#respond" onclick="return addComment.moveForm( &quot;comment-556&quot;, &quot;556&quot;, &quot;respond&quot;, &quot;56&quot; )" aria-label="Reply to Scoot" data-vivaldi-spatnav-clickable="1"><i class="fa fa-reply"></i> Reply</a>                    </span>
+
+                                    </div>
+
+                <div class="comment-content panel-body">
+                    <p>Man great guide! Very helpful. I’m new to Linux and I know Arch is a hell of a distro for a newbie to take on. But I figured if I am going to learn a new operating system and learn it as well as I know windows, I might as well jump right in for the challenge and learn it. This helped a lot and gave me a root to be able to research more of the commands and how the file system works. Great Job! Installing on my desktop works great, however my laptop has Nvidia Optimus, so I am still trying to sort that out since you get a blank screen on start of the desktop manager.</p>
+                </div>
+            </div>
+        </div>
+
+    </article>
+</li>
+<ul class="children">
+<li id="comment-568" class="comment odd alt depth-2">
+    <article id="div-comment-568" class="comment-body media">
+        <div class="pull-left">
+            <img alt="" src="./GloriousEggroll&#39;s Blog » Arch Linux EFI Install Guide_files/7ff59b78b946b2a91c056bb5973f0bb5" srcset="http://1.gravatar.com/avatar/7ff59b78b946b2a91c056bb5973f0bb5?s=100&amp;d=mm&amp;r=g 2x" class="avatar media-object img-rounded avatar-50 photo" height="50" width="50">        </div>
+
+        <div class="media-body comment">
+            <div class="media-body-wrap panel panel-default  comment">
+                <div class="panel-heading">
+                    <b>tim gugenhiemer</b>
+                    
+                                        <a href="http://www.goggle.com/" target="_blank" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="http://www.goggle.com"><i class="fa fa-home"></i></a>
+                                        
+                    <span class="text-muted"><small>5 months ago</small></span>
+
+                    <span class="pull-right">
+                                                <a rel="nofollow" class="comment-reply-link btn btn-default btn-xs" data-scroll="true" href="http://gloriouseggroll.tv/arch-linux-efi-install-guide/?replytocom=568#respond" onclick="return addComment.moveForm( &quot;comment-568&quot;, &quot;568&quot;, &quot;respond&quot;, &quot;56&quot; )" aria-label="Reply to tim gugenhiemer" data-vivaldi-spatnav-clickable="1"><i class="fa fa-reply"></i> Reply</a>                    </span>
+
+                                    </div>
+
+                <div class="comment-content panel-body">
+                    <p>Dude thanks for the tutorial! Just one thing… I hate gnome with a burning pasion, and no where else is at all helpfull about installing kde plasma. Since you’re the only person making USEFUL arch tutorials, how the heck do I throw kde on my machine instead of gnome/get it to work?</p>
+                </div>
+            </div>
+        </div>
+
+    </article>
+</li>
+<!-- #comment-## -->
+<li id="comment-588" class="comment even depth-2">
+    <article id="div-comment-588" class="comment-body media">
+        <div class="pull-left">
+            <img alt="" src="./GloriousEggroll&#39;s Blog » Arch Linux EFI Install Guide_files/68a3267c877ee192479f1c481ccd85b1" srcset="http://0.gravatar.com/avatar/68a3267c877ee192479f1c481ccd85b1?s=100&amp;d=mm&amp;r=g 2x" class="avatar media-object img-rounded avatar-50 photo" height="50" width="50">        </div>
+
+        <div class="media-body comment">
+            <div class="media-body-wrap panel panel-default  comment">
+                <div class="panel-heading">
+                    <b>DonnyQ</b>
+                    
+                                        
+                    <span class="text-muted"><small>2 months ago</small></span>
+
+                    <span class="pull-right">
+                                                <a rel="nofollow" class="comment-reply-link btn btn-default btn-xs" data-scroll="true" href="http://gloriouseggroll.tv/arch-linux-efi-install-guide/?replytocom=588#respond" onclick="return addComment.moveForm( &quot;comment-588&quot;, &quot;588&quot;, &quot;respond&quot;, &quot;56&quot; )" aria-label="Reply to DonnyQ" data-vivaldi-spatnav-clickable="1"><i class="fa fa-reply"></i> Reply</a>                    </span>
+
+                                    </div>
+
+                <div class="comment-content panel-body">
+                    <p>I wrestled Optimus for months, because I wanted three displays.  I found no acceptable Linux implementation.  Finally, I realized I could turn it off in BIOS (Dell M6600, runs EFI over BIOS…).  That allowed me to get two monitors working properly.  Good enough.  If Bumblebee guesses correctly someday, or NVIDIA decides to play nice, I’ll be thrilled.  If anyone knows some magic, I’d love to hear it.</p>
+                </div>
+            </div>
+        </div>
+
+    </article>
+</li>
+<!-- #comment-## -->
+</ul><!-- .children -->
+<!-- #comment-## -->
+<li id="comment-560" class="comment odd alt thread-even depth-1">
+    <article id="div-comment-560" class="comment-body media">
+        <div class="pull-left">
+            <img alt="" src="./GloriousEggroll&#39;s Blog » Arch Linux EFI Install Guide_files/6463e68c6dddde1fee79adffab687077" srcset="http://0.gravatar.com/avatar/6463e68c6dddde1fee79adffab687077?s=100&amp;d=mm&amp;r=g 2x" class="avatar media-object img-rounded avatar-50 photo" height="50" width="50">        </div>
+
+        <div class="media-body comment">
+            <div class="media-body-wrap panel panel-default  comment">
+                <div class="panel-heading">
+                    <b>gyrene2083</b>
+                    
+                                        
+                    <span class="text-muted"><small>8 months ago</small></span>
+
+                    <span class="pull-right">
+                                                <a rel="nofollow" class="comment-reply-link btn btn-default btn-xs" data-scroll="true" href="http://gloriouseggroll.tv/arch-linux-efi-install-guide/?replytocom=560#respond" onclick="return addComment.moveForm( &quot;comment-560&quot;, &quot;560&quot;, &quot;respond&quot;, &quot;56&quot; )" aria-label="Reply to gyrene2083" data-vivaldi-spatnav-clickable="1"><i class="fa fa-reply"></i> Reply</a>                    </span>
+
+                                    </div>
+
+                <div class="comment-content panel-body">
+                    <p>I wanted to thank you for you videos. I had to use part of your video and another video from a few years ago, to get grub installed. Sadly, I didn’t realize the laptop I was installing Arch on didn’t have UEFI. It is so true what they say, you just don’t install Arch right the first time. It took me three days, with your tutorials I was able to get further each time, and finally now I have my DE. </p>
+<p>So, thanks for helping this Grumpy ‘Ole Marine out. </p>
+<p>-Semper Fi</p>
+                </div>
+            </div>
+        </div>
+
+    </article>
+</li>
+<!-- #comment-## -->
+<li id="comment-561" class="comment even thread-odd thread-alt depth-1">
+    <article id="div-comment-561" class="comment-body media">
+        <div class="pull-left">
+            <img alt="" src="./GloriousEggroll&#39;s Blog » Arch Linux EFI Install Guide_files/216fc4bc872c36ec2bb318fafa2f6d53" srcset="http://2.gravatar.com/avatar/216fc4bc872c36ec2bb318fafa2f6d53?s=100&amp;d=mm&amp;r=g 2x" class="avatar media-object img-rounded avatar-50 photo" height="50" width="50">        </div>
+
+        <div class="media-body comment">
+            <div class="media-body-wrap panel panel-default  comment">
+                <div class="panel-heading">
+                    <b>ahaasler</b>
+                    
+                                        <a href="https://www.adrianhaasler.com/" target="_blank" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="https://www.adrianhaasler.com"><i class="fa fa-home"></i></a>
+                                        
+                    <span class="text-muted"><small>7 months ago</small></span>
+
+                    <span class="pull-right">
+                                                <a rel="nofollow" class="comment-reply-link btn btn-default btn-xs" data-scroll="true" href="http://gloriouseggroll.tv/arch-linux-efi-install-guide/?replytocom=561#respond" onclick="return addComment.moveForm( &quot;comment-561&quot;, &quot;561&quot;, &quot;respond&quot;, &quot;56&quot; )" aria-label="Reply to ahaasler" data-vivaldi-spatnav-clickable="1"><i class="fa fa-reply"></i> Reply</a>                    </span>
+
+                                    </div>
+
+                <div class="comment-content panel-body">
+                    <p>Great guide! Just one correction, discards are not recommended for NVMe drives: <a href="https://wiki.archlinux.org/index.php/Solid_State_Drives/NVMe#Discards" rel="nofollow">https://wiki.archlinux.org/index.php/Solid_State_Drives/NVMe#Discards</a></p>
+                </div>
+            </div>
+        </div>
+
+    </article>
+</li>
+<!-- #comment-## -->
+<li id="comment-563" class="comment odd alt thread-even depth-1">
+    <article id="div-comment-563" class="comment-body media">
+        <div class="pull-left">
+            <img alt="" src="./GloriousEggroll&#39;s Blog » Arch Linux EFI Install Guide_files/f75dd0d5d81cef72cee16193101d2ea7" srcset="http://0.gravatar.com/avatar/f75dd0d5d81cef72cee16193101d2ea7?s=100&amp;d=mm&amp;r=g 2x" class="avatar media-object img-rounded avatar-50 photo" height="50" width="50">        </div>
+
+        <div class="media-body comment">
+            <div class="media-body-wrap panel panel-default  comment">
+                <div class="panel-heading">
+                    <b>Joe</b>
+                    
+                                        
+                    <span class="text-muted"><small>7 months ago</small></span>
+
+                    <span class="pull-right">
+                                                <a rel="nofollow" class="comment-reply-link btn btn-default btn-xs" data-scroll="true" href="http://gloriouseggroll.tv/arch-linux-efi-install-guide/?replytocom=563#respond" onclick="return addComment.moveForm( &quot;comment-563&quot;, &quot;563&quot;, &quot;respond&quot;, &quot;56&quot; )" aria-label="Reply to Joe" data-vivaldi-spatnav-clickable="1"><i class="fa fa-reply"></i> Reply</a>                    </span>
+
+                                    </div>
+
+                <div class="comment-content panel-body">
+                    <p>Hey, 1st of all. Big thank you for making the videos, getting thru the arch install on my efi laptop felt damn near impossible otherwise.</p>
+<p>I do have a quick question, and I’d definitely appreciate any guidance.<br>
+I’m on laptop, but I ran the “sudo systemctl enable dhcpcd@(my wifi).service” command with my “UP” wifi. Of course, that command is only be for wired desktops so I screwed up a bit. As a result, my Arch system spends 1min 30secs trying to access it when it boots.</p>
+<p>I’ve tried “systemctl disable dhcpcd.service” and other simialar variations but I’m seemingly unable to disable it from activiting in boot.</p>
+<p>Any advice or suggestions on how to reverse the “sudo systemctl enable dhcpcd@(my wifi).service” would be awesome.</p>
+<p>Thanks man</p>
+                </div>
+            </div>
+        </div>
+
+    </article>
+</li>
+<!-- #comment-## -->
+<li id="comment-565" class="comment even thread-odd thread-alt depth-1 parent">
+    <article id="div-comment-565" class="comment-body media">
+        <div class="pull-left">
+            <img alt="" src="./GloriousEggroll&#39;s Blog » Arch Linux EFI Install Guide_files/c711922cf0dd043fd3ac03a07b3e587f" srcset="http://0.gravatar.com/avatar/c711922cf0dd043fd3ac03a07b3e587f?s=100&amp;d=mm&amp;r=g 2x" class="avatar media-object img-rounded avatar-50 photo" height="50" width="50">        </div>
+
+        <div class="media-body comment">
+            <div class="media-body-wrap panel panel-default  comment">
+                <div class="panel-heading">
+                    <b>Arch Linux</b>
+                    
+                                        
+                    <span class="text-muted"><small>7 months ago</small></span>
+
+                    <span class="pull-right">
+                                                <a rel="nofollow" class="comment-reply-link btn btn-default btn-xs" data-scroll="true" href="http://gloriouseggroll.tv/arch-linux-efi-install-guide/?replytocom=565#respond" onclick="return addComment.moveForm( &quot;comment-565&quot;, &quot;565&quot;, &quot;respond&quot;, &quot;56&quot; )" aria-label="Reply to Arch Linux" data-vivaldi-spatnav-clickable="1"><i class="fa fa-reply"></i> Reply</a>                    </span>
+
+                                    </div>
+
+                <div class="comment-content panel-body">
+                    <p>Oh my god can you PLEASE do a tutorial on how to set up AMD drivers (AMDGPU) on arch, this shit is driving me insane</p>
+                </div>
+            </div>
+        </div>
+
+    </article>
+</li>
+<ul class="children">
+<li id="comment-585" class="comment odd alt depth-2">
+    <article id="div-comment-585" class="comment-body media">
+        <div class="pull-left">
+            <img alt="" src="./GloriousEggroll&#39;s Blog » Arch Linux EFI Install Guide_files/9d9e74072620fae0b8c5720c7e29eec0" srcset="http://0.gravatar.com/avatar/9d9e74072620fae0b8c5720c7e29eec0?s=100&amp;d=mm&amp;r=g 2x" class="avatar media-object img-rounded avatar-50 photo" height="50" width="50">        </div>
+
+        <div class="media-body comment">
+            <div class="media-body-wrap panel panel-default  comment">
+                <div class="panel-heading">
+                    <b>John</b>
+                    
+                                        
+                    <span class="text-muted"><small>2 months ago</small></span>
+
+                    <span class="pull-right">
+                                                <a rel="nofollow" class="comment-reply-link btn btn-default btn-xs" data-scroll="true" href="http://gloriouseggroll.tv/arch-linux-efi-install-guide/?replytocom=585#respond" onclick="return addComment.moveForm( &quot;comment-585&quot;, &quot;585&quot;, &quot;respond&quot;, &quot;56&quot; )" aria-label="Reply to John" data-vivaldi-spatnav-clickable="1"><i class="fa fa-reply"></i> Reply</a>                    </span>
+
+                                    </div>
+
+                <div class="comment-content panel-body">
+                    <p>Yes also wondering about AMD GPU drivers , I have crossfire r9 390.</p>
+                </div>
+            </div>
+        </div>
+
+    </article>
+</li>
+<!-- #comment-## -->
+</ul><!-- .children -->
+<!-- #comment-## -->
+<li id="comment-566" class="comment even thread-even depth-1">
+    <article id="div-comment-566" class="comment-body media">
+        <div class="pull-left">
+            <img alt="" src="./GloriousEggroll&#39;s Blog » Arch Linux EFI Install Guide_files/8bc6c15f4181b33fbfac936fbdf7110f" srcset="http://2.gravatar.com/avatar/8bc6c15f4181b33fbfac936fbdf7110f?s=100&amp;d=mm&amp;r=g 2x" class="avatar media-object img-rounded avatar-50 photo" height="50" width="50">        </div>
+
+        <div class="media-body comment">
+            <div class="media-body-wrap panel panel-default  comment">
+                <div class="panel-heading">
+                    <b>lukas</b>
+                    
+                                        
+                    <span class="text-muted"><small>6 months ago</small></span>
+
+                    <span class="pull-right">
+                                                <a rel="nofollow" class="comment-reply-link btn btn-default btn-xs" data-scroll="true" href="http://gloriouseggroll.tv/arch-linux-efi-install-guide/?replytocom=566#respond" onclick="return addComment.moveForm( &quot;comment-566&quot;, &quot;566&quot;, &quot;respond&quot;, &quot;56&quot; )" aria-label="Reply to lukas" data-vivaldi-spatnav-clickable="1"><i class="fa fa-reply"></i> Reply</a>                    </span>
+
+                                    </div>
+
+                <div class="comment-content panel-body">
+                    <p>My login takes verry long, like 5 minutes gdm starts fast but after I enter my password it takes forever to login. Its not because of hardware, I have a similar setup you have. Any Ideas?<br>
+Also I usually dont use a swap partition I create a swapfile in root, so i dont have to create another partition.</p>
+                </div>
+            </div>
+        </div>
+
+    </article>
+</li>
+<!-- #comment-## -->
+<li id="comment-567" class="comment odd alt thread-odd thread-alt depth-1 parent">
+    <article id="div-comment-567" class="comment-body media">
+        <div class="pull-left">
+            <img alt="" src="./GloriousEggroll&#39;s Blog » Arch Linux EFI Install Guide_files/35438f6950372062ca25328f9a45bd9d" srcset="http://0.gravatar.com/avatar/35438f6950372062ca25328f9a45bd9d?s=100&amp;d=mm&amp;r=g 2x" class="avatar media-object img-rounded avatar-50 photo" height="50" width="50">        </div>
+
+        <div class="media-body comment">
+            <div class="media-body-wrap panel panel-default  comment">
+                <div class="panel-heading">
+                    <b>Johan</b>
+                    
+                                        
+                    <span class="text-muted"><small>6 months ago</small></span>
+
+                    <span class="pull-right">
+                                                <a rel="nofollow" class="comment-reply-link btn btn-default btn-xs" data-scroll="true" href="http://gloriouseggroll.tv/arch-linux-efi-install-guide/?replytocom=567#respond" onclick="return addComment.moveForm( &quot;comment-567&quot;, &quot;567&quot;, &quot;respond&quot;, &quot;56&quot; )" aria-label="Reply to Johan" data-vivaldi-spatnav-clickable="1"><i class="fa fa-reply"></i> Reply</a>                    </span>
+
+                                    </div>
+
+                <div class="comment-content panel-body">
+                    <p>You are writing that your root partition is sda1 at some point and which is not correct. it is sda3, which you also later refer it as.  However I’m confused,  are you meaning to refer to your boot (sda1)  or root (sda3). The relevant command is this:<br>
+blkid -s PARTUUID -o value /dev/sdxY</p>
+                </div>
+            </div>
+        </div>
+
+    </article>
+</li>
+<ul class="children">
+<li id="comment-576" class="comment byuser comment-author-gloriouseggroll bypostauthor even depth-2">
+    <article id="div-comment-576" class="comment-body media">
+        <div class="pull-left">
+            <img alt="" src="./GloriousEggroll&#39;s Blog » Arch Linux EFI Install Guide_files/61477473187667a091e626729efff37a" srcset="http://0.gravatar.com/avatar/61477473187667a091e626729efff37a?s=100&amp;d=mm&amp;r=g 2x" class="avatar media-object img-rounded avatar-50 photo" height="50" width="50">        </div>
+
+        <div class="media-body comment">
+            <div class="media-body-wrap panel panel-default  comment">
+                <div class="panel-heading">
+                    <b>GloriousEggroll</b>
+                    
+                                        <a href="http://gloriouseggroll.tv/" target="_blank" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="http://gloriouseggroll.tv"><i class="fa fa-home"></i></a>
+                                        
+                    <span class="text-muted"><small>3 months ago</small></span>
+
+                    <span class="pull-right">
+                                                <a rel="nofollow" class="comment-reply-link btn btn-default btn-xs" data-scroll="true" href="http://gloriouseggroll.tv/arch-linux-efi-install-guide/?replytocom=576#respond" onclick="return addComment.moveForm( &quot;comment-576&quot;, &quot;576&quot;, &quot;respond&quot;, &quot;56&quot; )" aria-label="Reply to GloriousEggroll" data-vivaldi-spatnav-clickable="1"><i class="fa fa-reply"></i> Reply</a>                    </span>
+
+                                    </div>
+
+                <div class="comment-content panel-body">
+                    <p>sorry for the confusion, I was referring to root which was sda3</p>
+                </div>
+            </div>
+        </div>
+
+    </article>
+</li>
+<!-- #comment-## -->
+</ul><!-- .children -->
+<!-- #comment-## -->
+<li id="comment-569" class="comment odd alt thread-even depth-1">
+    <article id="div-comment-569" class="comment-body media">
+        <div class="pull-left">
+            <img alt="" src="./GloriousEggroll&#39;s Blog » Arch Linux EFI Install Guide_files/962915b09631c8de82d9113488d28b7b" srcset="http://0.gravatar.com/avatar/962915b09631c8de82d9113488d28b7b?s=100&amp;d=mm&amp;r=g 2x" class="avatar media-object img-rounded avatar-50 photo" height="50" width="50">        </div>
+
+        <div class="media-body comment">
+            <div class="media-body-wrap panel panel-default  comment">
+                <div class="panel-heading">
+                    <b>Tim</b>
+                    
+                                        
+                    <span class="text-muted"><small>5 months ago</small></span>
+
+                    <span class="pull-right">
+                                                <a rel="nofollow" class="comment-reply-link btn btn-default btn-xs" data-scroll="true" href="http://gloriouseggroll.tv/arch-linux-efi-install-guide/?replytocom=569#respond" onclick="return addComment.moveForm( &quot;comment-569&quot;, &quot;569&quot;, &quot;respond&quot;, &quot;56&quot; )" aria-label="Reply to Tim" data-vivaldi-spatnav-clickable="1"><i class="fa fa-reply"></i> Reply</a>                    </span>
+
+                                    </div>
+
+                <div class="comment-content panel-body">
+                    <p>What a relief it is to have someone like you in the world. Honestly thank you for this well defined and thorough installation guide. Very newb friendly <img draggable="false" class="emoji" alt="🙂" src="./GloriousEggroll&#39;s Blog » Arch Linux EFI Install Guide_files/1f642.svg"> THANK YOU</p>
+                </div>
+            </div>
+        </div>
+
+    </article>
+</li>
+<!-- #comment-## -->
+<li id="comment-570" class="comment even thread-odd thread-alt depth-1">
+    <article id="div-comment-570" class="comment-body media">
+        <div class="pull-left">
+            <img alt="" src="./GloriousEggroll&#39;s Blog » Arch Linux EFI Install Guide_files/5c06b985407d05ff1769faf7cf4005c9" srcset="http://2.gravatar.com/avatar/5c06b985407d05ff1769faf7cf4005c9?s=100&amp;d=mm&amp;r=g 2x" class="avatar media-object img-rounded avatar-50 photo" height="50" width="50">        </div>
+
+        <div class="media-body comment">
+            <div class="media-body-wrap panel panel-default  comment">
+                <div class="panel-heading">
+                    <b>Prasad</b>
+                    
+                                        
+                    <span class="text-muted"><small>5 months ago</small></span>
+
+                    <span class="pull-right">
+                                                <a rel="nofollow" class="comment-reply-link btn btn-default btn-xs" data-scroll="true" href="http://gloriouseggroll.tv/arch-linux-efi-install-guide/?replytocom=570#respond" onclick="return addComment.moveForm( &quot;comment-570&quot;, &quot;570&quot;, &quot;respond&quot;, &quot;56&quot; )" aria-label="Reply to Prasad" data-vivaldi-spatnav-clickable="1"><i class="fa fa-reply"></i> Reply</a>                    </span>
+
+                                    </div>
+
+                <div class="comment-content panel-body">
+                    <p>Hi,</p>
+<p>Thanks for the amazing tutorial. Your site is very much useful for me to learn a lot about Arch Linux and related setup guides. I’m  finding it hard to disable my discrete graphics card. I’m currently running Arch Linux on my Alienware M14x-R2. I have bumblebee and bbswitch installed with default settings, but the discrete graphics always keeps running and draining power. Can you tell how can I disable the discrete graphics forever or keep it off most of the times as my tasks are not GPU intensive.</p>
+<p>Thanks,<br>
+Prasad</p>
+                </div>
+            </div>
+        </div>
+
+    </article>
+</li>
+<!-- #comment-## -->
+<li id="comment-571" class="comment odd alt thread-even depth-1">
+    <article id="div-comment-571" class="comment-body media">
+        <div class="pull-left">
+            <img alt="" src="./GloriousEggroll&#39;s Blog » Arch Linux EFI Install Guide_files/31951d4bc1cf4819e597c7a9deb9105f" srcset="http://0.gravatar.com/avatar/31951d4bc1cf4819e597c7a9deb9105f?s=100&amp;d=mm&amp;r=g 2x" class="avatar media-object img-rounded avatar-50 photo" height="50" width="50">        </div>
+
+        <div class="media-body comment">
+            <div class="media-body-wrap panel panel-default  comment">
+                <div class="panel-heading">
+                    <b>naph</b>
+                    
+                                        
+                    <span class="text-muted"><small>5 months ago</small></span>
+
+                    <span class="pull-right">
+                                                <a rel="nofollow" class="comment-reply-link btn btn-default btn-xs" data-scroll="true" href="http://gloriouseggroll.tv/arch-linux-efi-install-guide/?replytocom=571#respond" onclick="return addComment.moveForm( &quot;comment-571&quot;, &quot;571&quot;, &quot;respond&quot;, &quot;56&quot; )" aria-label="Reply to naph" data-vivaldi-spatnav-clickable="1"><i class="fa fa-reply"></i> Reply</a>                    </span>
+
+                                    </div>
+
+                <div class="comment-content panel-body">
+                    <p>Hi,</p>
+<p>thank you for that guide. I would appreciate if you can tell me how i can make my arch dual booting with my windows.</p>
+<p>Do you hava a guide for that too?</p>
+                </div>
+            </div>
+        </div>
+
+    </article>
+</li>
+<!-- #comment-## -->
+<li id="comment-577" class="comment even thread-odd thread-alt depth-1">
+    <article id="div-comment-577" class="comment-body media">
+        <div class="pull-left">
+            <img alt="" src="./GloriousEggroll&#39;s Blog » Arch Linux EFI Install Guide_files/2791a6811af31f73ce42b66d0c8540fa" srcset="http://2.gravatar.com/avatar/2791a6811af31f73ce42b66d0c8540fa?s=100&amp;d=mm&amp;r=g 2x" class="avatar media-object img-rounded avatar-50 photo" height="50" width="50">        </div>
+
+        <div class="media-body comment">
+            <div class="media-body-wrap panel panel-default  comment">
+                <div class="panel-heading">
+                    <b>someone</b>
+                    
+                                        
+                    <span class="text-muted"><small>3 months ago</small></span>
+
+                    <span class="pull-right">
+                                                <a rel="nofollow" class="comment-reply-link btn btn-default btn-xs" data-scroll="true" href="http://gloriouseggroll.tv/arch-linux-efi-install-guide/?replytocom=577#respond" onclick="return addComment.moveForm( &quot;comment-577&quot;, &quot;577&quot;, &quot;respond&quot;, &quot;56&quot; )" aria-label="Reply to someone" data-vivaldi-spatnav-clickable="1"><i class="fa fa-reply"></i> Reply</a>                    </span>
+
+                                    </div>
+
+                <div class="comment-content panel-body">
+                    <p>I have Nvidia GT840m which driver should I install?</p>
+                </div>
+            </div>
+        </div>
+
+    </article>
+</li>
+<!-- #comment-## -->
+<li id="comment-582" class="comment odd alt thread-even depth-1">
+    <article id="div-comment-582" class="comment-body media">
+        <div class="pull-left">
+            <img alt="" src="./GloriousEggroll&#39;s Blog » Arch Linux EFI Install Guide_files/f7f56df5755217dfda3583a1ca7e5d8f" srcset="http://0.gravatar.com/avatar/f7f56df5755217dfda3583a1ca7e5d8f?s=100&amp;d=mm&amp;r=g 2x" class="avatar media-object img-rounded avatar-50 photo" height="50" width="50">        </div>
+
+        <div class="media-body comment">
+            <div class="media-body-wrap panel panel-default  comment">
+                <div class="panel-heading">
+                    <b>fcoblanco</b>
+                    
+                                        
+                    <span class="text-muted"><small>2 months ago</small></span>
+
+                    <span class="pull-right">
+                                                <a rel="nofollow" class="comment-reply-link btn btn-default btn-xs" data-scroll="true" href="http://gloriouseggroll.tv/arch-linux-efi-install-guide/?replytocom=582#respond" onclick="return addComment.moveForm( &quot;comment-582&quot;, &quot;582&quot;, &quot;respond&quot;, &quot;56&quot; )" aria-label="Reply to fcoblanco" data-vivaldi-spatnav-clickable="1"><i class="fa fa-reply"></i> Reply</a>                    </span>
+
+                                    </div>
+
+                <div class="comment-content panel-body">
+                    <p>Every time i update the sistem and reboot the system don’t start. “Failed to start Login Service”</p>
+<p>What can i do?</p>
+                </div>
+            </div>
+        </div>
+
+    </article>
+</li>
+<!-- #comment-## -->
+<li id="comment-586" class="comment even thread-odd thread-alt depth-1">
+    <article id="div-comment-586" class="comment-body media">
+        <div class="pull-left">
+            <img alt="" src="./GloriousEggroll&#39;s Blog » Arch Linux EFI Install Guide_files/89d5e4898f106f96e622460644274a74" srcset="http://2.gravatar.com/avatar/89d5e4898f106f96e622460644274a74?s=100&amp;d=mm&amp;r=g 2x" class="avatar media-object img-rounded avatar-50 photo" height="50" width="50">        </div>
+
+        <div class="media-body comment">
+            <div class="media-body-wrap panel panel-default  comment">
+                <div class="panel-heading">
+                    <b>panos</b>
+                    
+                                        
+                    <span class="text-muted"><small>2 months ago</small></span>
+
+                    <span class="pull-right">
+                                                <a rel="nofollow" class="comment-reply-link btn btn-default btn-xs" data-scroll="true" href="http://gloriouseggroll.tv/arch-linux-efi-install-guide/?replytocom=586#respond" onclick="return addComment.moveForm( &quot;comment-586&quot;, &quot;586&quot;, &quot;respond&quot;, &quot;56&quot; )" aria-label="Reply to panos" data-vivaldi-spatnav-clickable="1"><i class="fa fa-reply"></i> Reply</a>                    </span>
+
+                                    </div>
+
+                <div class="comment-content panel-body">
+                    <p>Hi ,</p>
+<p>I followed your guide several times. When I reboot my system for the first time after part 2 I get the following error:</p>
+<p>Failed to open file: initramfs.img<br>
+Trying to load files to higher address<br>
+Failed to open file: initramfs.img</p>
+                </div>
+            </div>
+        </div>
+
+    </article>
+</li>
+<!-- #comment-## -->
+<li id="comment-587" class="comment odd alt thread-even depth-1">
+    <article id="div-comment-587" class="comment-body media">
+        <div class="pull-left">
+            <img alt="" src="./GloriousEggroll&#39;s Blog » Arch Linux EFI Install Guide_files/7bd368216ae7766815d0285460645ffd" srcset="http://1.gravatar.com/avatar/7bd368216ae7766815d0285460645ffd?s=100&amp;d=mm&amp;r=g 2x" class="avatar media-object img-rounded avatar-50 photo" height="50" width="50">        </div>
+
+        <div class="media-body comment">
+            <div class="media-body-wrap panel panel-default  comment">
+                <div class="panel-heading">
+                    <b>Mahdi</b>
+                    
+                                        
+                    <span class="text-muted"><small>2 months ago</small></span>
+
+                    <span class="pull-right">
+                                                <a rel="nofollow" class="comment-reply-link btn btn-default btn-xs" data-scroll="true" href="http://gloriouseggroll.tv/arch-linux-efi-install-guide/?replytocom=587#respond" onclick="return addComment.moveForm( &quot;comment-587&quot;, &quot;587&quot;, &quot;respond&quot;, &quot;56&quot; )" aria-label="Reply to Mahdi" data-vivaldi-spatnav-clickable="1"><i class="fa fa-reply"></i> Reply</a>                    </span>
+
+                                    </div>
+
+                <div class="comment-content panel-body">
+                    <p>Hey man</p>
+<p>Firstly, I appreciated for the nicest tutorial ever. Next, I’d be thankful if yo help me to make a network and connect two laptop one running Arch linux and another with Windows 10.<br>
+By a way if this helps, Arch comes with XFCE DE.</p>
+                </div>
+            </div>
+        </div>
+
+    </article>
+</li>
+<!-- #comment-## -->
+<li id="comment-589" class="comment even thread-odd thread-alt depth-1">
+    <article id="div-comment-589" class="comment-body media">
+        <div class="pull-left">
+            <img alt="" src="./GloriousEggroll&#39;s Blog » Arch Linux EFI Install Guide_files/68a3267c877ee192479f1c481ccd85b1" srcset="http://0.gravatar.com/avatar/68a3267c877ee192479f1c481ccd85b1?s=100&amp;d=mm&amp;r=g 2x" class="avatar media-object img-rounded avatar-50 photo" height="50" width="50">        </div>
+
+        <div class="media-body comment">
+            <div class="media-body-wrap panel panel-default  comment">
+                <div class="panel-heading">
+                    <b>DonnyQ</b>
+                    
+                                        
+                    <span class="text-muted"><small>2 months ago</small></span>
+
+                    <span class="pull-right">
+                                                <a rel="nofollow" class="comment-reply-link btn btn-default btn-xs" data-scroll="true" href="http://gloriouseggroll.tv/arch-linux-efi-install-guide/?replytocom=589#respond" onclick="return addComment.moveForm( &quot;comment-589&quot;, &quot;589&quot;, &quot;respond&quot;, &quot;56&quot; )" aria-label="Reply to DonnyQ" data-vivaldi-spatnav-clickable="1"><i class="fa fa-reply"></i> Reply</a>                    </span>
+
+                                    </div>
+
+                <div class="comment-content panel-body">
+                    <p>Awesome.  Thanks.  I almost wish I had found this before working it out through the Arch Wiki – but then I would have missed out on getting familiar with with that, and wouldn’t appreciate the concision and clarity of your articles!</p>
+                </div>
+            </div>
+        </div>
+
+    </article>
+</li>
+<!-- #comment-## -->
+    </ol>
+
+    
+
+<hr>
+
+<a name="respond"></a>
+<div class="comment-body media" id="respond">
+    <div class="pull-left" href="#">
+        <img alt="" src="./GloriousEggroll&#39;s Blog » Arch Linux EFI Install Guide_files/saved_resource" srcset="http://1.gravatar.com/avatar/?s=100&amp;d=mm&amp;r=g 2x" class="avatar media-object img-rounded avatar-50 photo avatar-default" height="50" width="50">    </div>
+
+    <div class="media-body comment">
+        <div class="media-body-wrap panel panel-default comment">
+            <div class="panel-heading" style="padding-bottom: 0;">
+                <ul class="nav nav-tabs" style="position: relative; top: 1px;">
+                    <li class="active"><a href="http://gloriouseggroll.tv/arch-linux-efi-install-guide/#write" data-toggle="tab" data-vivaldi-spatnav-clickable="1"><i class="fa fa-pencil"></i> Reply</a></li>
+                                        <li><a href="http://gloriouseggroll.tv/arch-linux-efi-install-guide/#preview" data-toggle="tab" class="preview-reply" data-vivaldi-spatnav-clickable="1"><i class="fa fa-eye"></i> Preview</a></li>
+                    <li><a href="http://gloriouseggroll.tv/arch-linux-efi-install-guide/#help" data-toggle="tab" class="preview-reply" data-vivaldi-spatnav-clickable="1"><i class="fa fa-question"></i> Help</a></li>
+                                    </ul>
+            </div>
+            <div class="panel-body">
+                <div class="tab-content">
+                    <div id="write" class="tab-pane active">
+                        <a rel="nofollow" id="cancel-comment-reply-link" href="http://gloriouseggroll.tv/arch-linux-efi-install-guide/#respond" style="display:none;">Click here to cancel reply.</a>				<div id="respond" class="comment-respond">
+			<h3 id="reply-title" class="comment-reply-title"></h3> <small><a rel="nofollow" id="cancel-comment-reply-link" href="http://gloriouseggroll.tv/arch-linux-efi-install-guide/#respond" style="display:none;"><em></em></a></small>				<form action="http://gloriouseggroll.tv/wp-comments-post.php" method="post" id="commentform" class="comment-form">
+					<br><p><textarea placeholder="Markdown enabled" id="comment" class="form-control" name="comment" cols="45" rows="8" aria-required="true" minlength="15" maxlength="15360"></textarea></p><div class="row">
+                                <div class="col-md-4">
+                                    <input class="form-control" placeholder="Name" id="author" name="author" type="text" value="" size="30" aria-required="true">
+                            </div>
+<div class="col-md-4">
+                                <input class="form-control" placeholder="E-Mail" id="email" name="email" type="text" value="" size="30" aria-required="true">
+                            </div>
+<div class="col-md-4">
+                                <input class="form-control" placeholder="URL" id="url" name="url" type="text" value="" size="30">
+                            </div>
+                        </div><!-- /row -->
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post comment"> <input type="hidden" name="comment_post_ID" value="56" id="comment_post_ID">
+<input type="hidden" name="comment_parent" id="comment_parent" value="0">
+</p>
+<noscript>&lt;input type="hidden" name="JS04X7" value="NS1" /&gt;</noscript>
+<noscript>&lt;p&gt;&lt;strong&gt;Currently you have JavaScript disabled. In order to post comments, please make sure JavaScript and Cookies are enabled, and reload the page.&lt;/strong&gt; &lt;a href="http://enable-javascript.com/" rel="nofollow external" &gt;Click here for instructions on how to enable JavaScript in your browser.&lt;/a&gt;&lt;/p&gt;</noscript>
+				</form>
+					</div><!-- #respond -->
+		                    </div>
+                    
+                                        
+                    <div id="preview" class="tab-pane">
+                        <!-- Markdown preview tab -->
+                        <div id="markdown-preview"></div>
+                    </div>
+                    
+                    <div id="help" class="tab-pane">
+                        <!-- Markdown help tab -->
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th style="width: 50%;">Markdown</th>
+                                    <th style="width: 50%;">Result</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>*text*</td>
+                                    <td><i>text</i></td>
+                                </tr>
+                                <tr>
+                                    <td>**text**</td>
+                                    <td><b>text</b></td>
+                                </tr>
+                                <tr>
+                                    <td>***text***</td>
+                                    <td><i><b>text</b></i></td>
+                                </tr>
+                                <tr>
+                                    <td>`code`</td>
+                                    <td><code>code</code></td>
+                                </tr>
+                                <tr>
+                                    <td>~~~<br>
+                                    more code
+                                    <br>~~~~</td>
+                                    <td>
+                                        <pre>more code</pre>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>[Link](http://www.example.com)</td>
+                                    <td><a href="http://www.example.com/">Link</a></td>
+                                </tr>
+                                <tr>
+                                    <td>* Listitem</td>
+                                    <td><ul><li>Listitem</li></ul></td>
+                                </tr>
+                                <tr>
+                                    <td>&gt; Quote</td>
+                                    <td><blockquote>Quote</blockquote></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                                    </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+                            </div>
+            <div class="col-md-2">
+                <div class="sidebar affix" style="position: static;">
+    <div id="search-8" class="widget hidden-xs"><form role="search" method="get" id="searchform" action="http://gloriouseggroll.tv/" class="navbar-form navbar-left">
+    <div>
+        <input type="text" value="" name="s" id="s" placeholder="Search..." class="form-control">
+    </div>
+</form></div><div id="text-3" class="widget hidden-xs">			<div class="textwidget"><form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="hosted_button_id" value="YT8975BQ5VMN8">
+<input type="image" src="./GloriousEggroll&#39;s Blog » Arch Linux EFI Install Guide_files/donate-button2.png" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!" width="172" height="52">
+<img alt="" border="0" src="./GloriousEggroll&#39;s Blog » Arch Linux EFI Install Guide_files/pixel.gif" width="1" height="1">
+</form>
+</div>
+		</div><div id="nav_menu-2" class="widget hidden-xs"><div class="menu-linux-system-guides-container"><ul id="menu-linux-system-guides" class="menu"><li id="menu-item-193" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-193"><a href="http://gloriouseggroll.tv/2016-arch-linux-nvidia-get-rid-of-screen-tearing-and-stuttering/">2016 Arch Linux + Nvidia – Get Rid of Screen Tearing and stuttering!!!</a></li>
+<li id="menu-item-194" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-194"><a href="http://gloriouseggroll.tv/142-2/">2016 Arch Linux NetworkManager / Wifi Setup guide.</a></li>
+<li id="menu-item-195" class="menu-item menu-item-type-post_type menu-item-object-post current-menu-item menu-item-195"><a href="http://gloriouseggroll.tv/arch-linux-efi-install-guide/">Arch Linux EFI Install Guide</a></li>
+</ul></div></div><div id="nav_menu-3" class="widget hidden-xs"><div class="menu-linux-gaming-guides-container"><ul id="menu-linux-gaming-guides" class="menu"><li id="menu-item-196" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-196"><a href="http://gloriouseggroll.tv/2016-arch-linux-wine-staging-1-9-5-warframe/">2016 Arch Linux + Wine Staging 1.9.5 + WARFRAME</a></li>
+<li id="menu-item-197" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-197"><a href="http://gloriouseggroll.tv/2016-arch-linux-nvidia-get-rid-of-screen-tearing-and-stuttering/">2016 Arch Linux + Nvidia – Get Rid of Screen Tearing and stuttering!!!</a></li>
+<li id="menu-item-198" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-198"><a href="http://gloriouseggroll.tv/2016-arch-linux-wine-1-9-4-grimdawn-optional-stagingcsmtgallium-nine-gloriouseggroll/">2016 Arch Linux + Wine 1.9.4 + GRIMDAWN (Optional Staging/CSMT/Gallium Nine)</a></li>
+<li id="menu-item-199" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-199"><a href="http://gloriouseggroll.tv/eso-arch-linux-wine-staging-1-9-4-nvidia/">2016 Wine 1.9.4 + ESO (Optional Staging/CSMT/Gallium Nine)</a></li>
+<li id="menu-item-200" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-200"><a href="http://gloriouseggroll.tv/ffxiv-arch-linux-wine-staging-1-7-45/">FFXIV + Arch Linux + wine-staging 1.7.45</a></li>
+</ul></div></div><div id="nav_menu-4" class="widget hidden-xs"><div class="menu-streaming-guides-container"><ul id="menu-streaming-guides" class="menu"><li id="menu-item-202" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-202"><a href="http://gloriouseggroll.tv/dual-pc-stream-audio-setup-with-single-xlr-microphone/">Dual PC stream audio setup with single XLR microphone</a></li>
+<li id="menu-item-203" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-203"><a href="http://gloriouseggroll.tv/obs-multiplatform-two-pc-non-partner-twitch-settings/">OBS Multiplatform Two PC non-partner twitch settings</a></li>
+</ul></div></div><div id="nav_menu-5" class="widget hidden-xs"><div class="menu-ranting-container"><ul id="menu-ranting" class="menu"><li id="menu-item-201" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-201"><a href="http://gloriouseggroll.tv/a-rant-about-streaming-websites/">A rant about streaming websites.</a></li>
+</ul></div></div><div id="text-2" class="widget hidden-xs">			<div class="textwidget"><a href="http://gloriouseggroll.tv/?page_id=10"><img src="./GloriousEggroll&#39;s Blog » Arch Linux EFI Install Guide_files/GloriousEggroll.png"></a>
+
+<a href="http://www.quorrabot.com/"><img src="./GloriousEggroll&#39;s Blog » Arch Linux EFI Install Guide_files/qblogo-blog.png" width="300"></a></div>
+		</div>		<div id="recent-posts-2" class="widget hidden-xs">		<h2 class="widgettitle">Recent Posts</h2>
+		<ul>
+					<li>
+				<a href="http://gloriouseggroll.tv/2016-arch-linux-nvidia-get-rid-of-screen-tearing-and-stuttering/">2016 Arch Linux + Nvidia – Get Rid of Screen Tearing and stuttering!!!</a>
+						</li>
+					<li>
+				<a href="http://gloriouseggroll.tv/2016-arch-linux-wine-1-9-4-grimdawn-optional-stagingcsmtgallium-nine-gloriouseggroll/">2016 Arch Linux + Wine 1.9.4 + GRIMDAWN (Optional Staging/CSMT/Gallium Nine)</a>
+						</li>
+					<li>
+				<a href="http://gloriouseggroll.tv/142-2/">2016 Arch Linux NetworkManager / Wifi Setup guide.</a>
+						</li>
+					<li>
+				<a href="http://gloriouseggroll.tv/dual-pc-stream-audio-setup-with-single-xlr-microphone/">Dual PC stream audio setup with single XLR microphone</a>
+						</li>
+					<li>
+				<a href="http://gloriouseggroll.tv/ffxiv-arch-linux-wine-staging-1-7-45/">FFXIV + Arch Linux + wine-staging 1.7.45</a>
+						</li>
+				</ul>
+		</div>		<div id="recent-comments-2" class="widget hidden-xs"><h2 class="widgettitle">Recent Comments</h2>
+<ul id="recentcomments"><li class="recentcomments"><span class="comment-author-link">DonnyQ</span> on <a href="http://gloriouseggroll.tv/arch-linux-efi-install-guide/#comment-589">Arch Linux EFI Install Guide</a></li><li class="recentcomments"><span class="comment-author-link">DonnyQ</span> on <a href="http://gloriouseggroll.tv/arch-linux-efi-install-guide/#comment-588">Arch Linux EFI Install Guide</a></li><li class="recentcomments"><span class="comment-author-link">Mahdi</span> on <a href="http://gloriouseggroll.tv/arch-linux-efi-install-guide/#comment-587">Arch Linux EFI Install Guide</a></li><li class="recentcomments"><span class="comment-author-link">panos</span> on <a href="http://gloriouseggroll.tv/arch-linux-efi-install-guide/#comment-586">Arch Linux EFI Install Guide</a></li><li class="recentcomments"><span class="comment-author-link">John</span> on <a href="http://gloriouseggroll.tv/arch-linux-efi-install-guide/#comment-585">Arch Linux EFI Install Guide</a></li></ul></div><div id="meta-2" class="widget hidden-xs"><h2 class="widgettitle">Meta</h2>
+			<ul>
+			<li><a href="http://gloriouseggroll.tv/wp-login.php?action=register">Register</a></li>			<li><a href="http://gloriouseggroll.tv/wp-login.php">Log in</a></li>
+			<li><a href="http://gloriouseggroll.tv/feed/">Entries <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="http://gloriouseggroll.tv/comments/feed/">Comments <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="https://wordpress.org/" title="Powered by WordPress, state-of-the-art semantic personal publishing platform.">WordPress.org</a></li>			</ul>
+			</div></div>            </div>
+        </div>
+        <footer style="margin-bottom: 20px;">
+            <hr>
+            <div class="row">
+                <div class="col-md-6">
+                    <a href="http://gloriouseggroll.tv/arch-linux-efi-install-guide/#top" data-scroll="true" data-vivaldi-spatnav-clickable="1">
+                        <i class="fa fa-arrow-up"></i> Back to top                    </a>
+                </div>
+                <div class="col-md-6 text-right">
+                    <small class="text-muted">
+                        © <strong>GloriousEggroll's Blog</strong><br>
+                        Theme by <a href="http://nehalist.io/" target="_blank">nehalist.io</a>                    </small>
+                </div>
+            </div>
+        </footer>
+    </div>
+    
+    
+<script type="text/javascript">
+/* <![CDATA[ */
+r3f5x9JS=escape(document['referrer']);
+hf4N='a34d9d02023d3d338e643685f2f836b7';
+hf4V='c3ee801fb685b82c979f693a2a4f0884';
+cm4S="form[action='http://gloriouseggroll.tv/wp-comments-post.php']";
+jQuery(document).ready(function($){var e="#commentform, .comment-respond form, .comment-form, "+cm4S+", #lostpasswordform, #registerform, #loginform, #login_form, #wpss_contact_form";$(e).submit(function(){$("<input>").attr("type","hidden").attr("name","r3f5x9JS").attr("value",r3f5x9JS).appendTo(e);$("<input>").attr("type","hidden").attr("name",hf4N).attr("value",hf4V).appendTo(e);return true;});$("#comment").attr({minlength:"15",maxlength:"15360"})});
+/* ]]> */
+</script> 
+<script type="text/javascript">var bU='http://gloriouseggroll.tv/wp-content/plugins/wp-youtube-lyte/lyte/';var mOs=navigator.userAgent.match(/(iphone|ipad|ipod|android)/i);style = document.createElement('style');style.type = 'text/css';rules = document.createTextNode(".lyte-wrapper-audio div, .lyte-wrapper div {margin:0px; overflow:hidden;} .lyte,.lyMe{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;background-color:#777;} .fourthree .lyMe, .fourthree .lyte {padding-bottom:75%;} .lidget{margin-bottom:5px;} .lidget .lyte, .widget .lyMe {padding-bottom:0!important;height:100%!important;} .lyte-wrapper-audio .lyte{height:38px!important;overflow:hidden;padding:0!important} .lyMe iframe, .lyte iframe,.lyte .pL{position:absolute !important;top:0;left:0;width:100%;height:100%!important;background:no-repeat scroll center #000;background-size:cover;cursor:pointer} .tC{left:0;position:absolute;top:0;width:100%} .tC{background-image:linear-gradient(to bottom,rgba(0,0,0,0.6),rgba(0,0,0,0))} .tT{color:#FFF;font-family:Roboto,sans-serif;font-size:16px;height:auto;text-align:left;padding:5px 10px 50px 10px} .play{background:no-repeat scroll 0 0 transparent;width:88px;height:63px;position:absolute;left:43%;left:calc(50% - 44px);left:-webkit-calc(50% - 44px);top:38%;top:calc(50% - 31px);top:-webkit-calc(50% - 31px);} .widget .play {top:30%;top:calc(45% - 31px);top:-webkit-calc(45% - 31px);transform:scale(0.6);-webkit-transform:scale(0.6);-ms-transform:scale(0.6);} .lyte:hover .play{background-position:0 -65px;} .lyte-audio .pL{max-height:38px!important} .lyte-audio iframe{height:438px!important} .ctrl{background:repeat scroll 0 -220px rgba(0,0,0,0.3);width:100%;height:40px;bottom:0px;left:0;position:absolute;} .lyte-wrapper .ctrl{display:none}.Lctrl{background:no-repeat scroll 0 -137px transparent;width:158px;height:40px;bottom:0;left:0;position:absolute} .Rctrl{background:no-repeat scroll -42px -179px transparent;width:117px;height:40px;bottom:0;right:0;position:absolute;padding-right:10px;}.lyte-audio .play{display:none}.lyte-audio .ctrl{background-color:rgba(0,0,0,1)}.hidden{display:none}" );if(style.styleSheet) { style.styleSheet.cssText = rules.nodeValue;} else {style.appendChild(rules);}document.getElementsByTagName('head')[0].appendChild(style);</script><script type="text/javascript" async="" src="./GloriousEggroll&#39;s Blog » Arch Linux EFI Install Guide_files/lyte-min.js"></script><script type="text/javascript" src="./GloriousEggroll&#39;s Blog » Arch Linux EFI Install Guide_files/comment-reply.min.js"></script>
+<script type="text/javascript" src="./GloriousEggroll&#39;s Blog » Arch Linux EFI Install Guide_files/twitch-status.js"></script>
+<script type="text/javascript" src="./GloriousEggroll&#39;s Blog » Arch Linux EFI Install Guide_files/jscripts-ftr-min.js"></script>
+<script type="text/javascript" src="./GloriousEggroll&#39;s Blog » Arch Linux EFI Install Guide_files/wp-embed.min.js"></script>
+
+
+</body></html>
