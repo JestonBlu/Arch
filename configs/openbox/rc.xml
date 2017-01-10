@@ -359,10 +359,10 @@ cases. -->
     </keybind>
     <keybind key="W-r">
       <action name="Execute">
-        <command>/opt/archbang/update_doc</command>
+        <command>firefox</command>
         <startupnotify>
           <enabled>yes</enabled>
-          <name>DOC</name>
+          <name>Web Browser</name>
         </startupnotify>
       </action>
     </keybind>
@@ -410,17 +410,17 @@ cases. -->
     </keybind>
     <keybind key="XF86AudioRaiseVolume">
       <action name="Execute">
-        <command>amixer set Master 5%+ unmute</command>
+        <command>sh -c "pactl set-sink-mute 2 false ; pactl set-sink-volume 2 +5%"</command>
       </action>
     </keybind>
     <keybind key="XF86AudioLowerVolume">
       <action name="Execute">
-        <command>amixer set Master 5%- unmute</command>
+        <command>sh -c "pactl set-sink-mute 2 false ; pactl set-sink-volume 2 -5%"</command>
       </action>
     </keybind>
     <keybind key="XF86AudioMute">
       <action name="Execute">
-        <command>amixer set Master toggle</command>
+        <command>pactl set-sink-mute 2 toggle</command>
       </action>
     </keybind>
     <keybind key="XF86ScreenSaver">
@@ -435,7 +435,7 @@ cases. -->
     </keybind>
   </keyboard>
   <mouse>
-    <dragThreshold>8</dragThreshold>
+    <dragThreshold>12</dragThreshold>
     <!-- number of pixels the mouse must move before a drag begins -->
     <doubleClickTime>200</doubleClickTime>
     <!-- in milliseconds (1000 = 1 second) -->
