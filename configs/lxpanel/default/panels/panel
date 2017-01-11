@@ -1,0 +1,78 @@
+# lxpanel <profile> config file. Manually editing is not recommended.
+# Use preference dialog in lxpanel to adjust config when you can.
+
+Global {
+  edge=top
+  allign=left
+  margin=7
+  widthtype=percent
+  width=10
+  height=24
+  transparent=1
+  tintcolor=#000000
+  alpha=0
+  setdocktype=1
+  setpartialstrut=1
+  usefontcolor=1
+  fontcolor=#9494b8
+  usefontsize=0
+  fontsize=10
+  background=0
+  backgroundfile=/usr/share/lxpanel/images/background.png
+  align=left
+  iconsize=20
+  monitor=-1
+}
+Plugin {
+  type=menu
+  Config {
+    system {
+    }
+    separator {
+    }
+    item {
+      command=run
+    }
+    separator {
+    }
+    item {
+      command=logout
+      image=gnome-logout
+    }
+    image=/usr/share/icons/arch_linux.png
+  }
+}
+Plugin {
+  type=separator
+  Config {
+  }
+}
+Plugin {
+  type=launchbar
+  Config {
+    Button {
+      id=pcmanfm.desktop
+    }
+    Button {
+      id=gnome-terminal.desktop
+    }
+    Button {
+      id=vivaldi-stable.desktop
+    }
+    Button {
+      id=atom.desktop
+    }
+    Button {
+      id=rstudio.desktop
+    }
+    Button {
+      id=Thunar.desktop
+    }
+    Button {
+      id=lxterminal.desktop
+    }
+    Button {
+      id=spotify.desktop
+    }
+  }
+}
