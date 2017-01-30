@@ -1,5 +1,5 @@
 #### My Arch Desktop
-![](screenshots/arch_desktop1.png)
+![](screenshots/arch_desktop0.png)
 
 
 #### Arch install guide
