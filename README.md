@@ -19,5 +19,5 @@ http://gloriouseggroll.tv/arch-linux-efi-install-guide/
 **Terminal**: Lxterminal with Alsi  
 **Compositor**: Compton  
 **File Manager**: Thunar  
-**Browser**: Vivaldi  
+**Browser**: Chromium  
 **Editor**: Atom  
