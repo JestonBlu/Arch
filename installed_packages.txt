@@ -1,3 +1,4 @@
+## List of installed packages generated on 5/10/2017
 acpid 2.0.28-1
 alsi 0.4.7-1
 atom 1.16.0-1
