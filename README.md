@@ -8,14 +8,13 @@ This is the best guide I have found to help me through the install process. I do
 http://gloriouseggroll.tv/arch-linux-efi-install-guide/
 
 #### My Setup
-
-**Window Manager**: Openbox
-**Launcher**: Lxpanel
-**Taskbar/System Tray**: Tint2
-**GTK Theme**: Simple2 `/configs/Simple2`
-**Icon Theme**: Moka
-**Terminal**: Lxterminal with Alsi
-**Compositor**: Compton
-**File Manager**: Thunar
-**Browser**: Chromium
-**Editor**: Atom
+* **Window Manager**: Openbox
+* **Launcher**: Lxpanel
+* **Taskbar/System Tray**: Tint2
+* **GTK Theme**: Simple2 `/configs/Simple2`
+* **Icon Theme**: Moka
+* **Terminal**: Lxterminal with Alsi
+* **Compositor**: Compton
+* **File Manager**: Thunar
+* **Browser**: Chromium
+* **Editor**: Atom
