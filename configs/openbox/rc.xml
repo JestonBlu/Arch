@@ -311,7 +311,7 @@ cases. -->
     </keybind>
     <keybind key="W-w">
       <action name="Execute">
-        <command>vivaldi-stable</command>
+        <command>chromium</command>
         <startupnotify>
           <enabled>yes</enabled>
           <name>Web Browser</name>
@@ -410,17 +410,17 @@ cases. -->
     </keybind>
     <keybind key="XF86AudioRaiseVolume">
       <action name="Execute">
-        <command>sh -c "pactl set-sink-mute 2 false ; pactl set-sink-volume 2 +5%"</command>
+        <command>sh -c "pactl set-sink-mute 1 false ; pactl set-sink-volume 1 +5%"</command>
       </action>
     </keybind>
     <keybind key="XF86AudioLowerVolume">
       <action name="Execute">
-        <command>sh -c "pactl set-sink-mute 2 false ; pactl set-sink-volume 2 -5%"</command>
+        <command>sh -c "pactl set-sink-mute 1 false ; pactl set-sink-volume 1 -5%"</command>
       </action>
     </keybind>
     <keybind key="XF86AudioMute">
       <action name="Execute">
-        <command>pactl set-sink-mute 2 toggle</command>
+        <command>pactl set-sink-mute 1 toggle</command>
       </action>
     </keybind>
     <keybind key="XF86ScreenSaver">

@@ -1,15 +1,17 @@
 # Set wallpaper
-(feh --bg-scale /home/jeston/Backgrounds/blurry_gray.jpg) &
+#(feh --bg-scale /usr/share/lxdm/themes/minimalistic-dark.jpg)
+nitrogen --restore &
 
 # transparent windows
-(compton -b) &
+compton -b &
 
 # panel
-(lxpanel) &
-(tint2) &
+lxpanel &
+tint2 &
 
 # Networking system tray applet
-(nm-applet) &
+nm-applet &
+volumeicon &
 
 # Onscreen system stats
-(conky) &
+conky
