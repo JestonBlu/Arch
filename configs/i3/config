@@ -31,7 +31,7 @@ floating_modifier $mod
 
 # start a terminal
 #bindsym $mod+Return exec i3-sensible-terminal
-bindsym $mod+Return exec lxterminal
+bindsym $mod+Return exec gnome-terminal
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -95,28 +95,27 @@ bindsym $mod+a focus parent
 #bindsym $mod+d focus child
 
 # switch to workspace
-bindsym Mod4+1 workspace 1: main
+bindsym Mod4+1 workspace 1: term
 bindsym Mod4+2 workspace 2: atom
-bindsym Mod4+3 workspace 3: term
-bindsym Mod4+4 workspace 4: scrap
-bindsym Mod4+5 workspace 5:
-bindsym Mod4+6 workspace 6:
-bindsym Mod4+7 workspace 7
-bindsym Mod4+8 workspace 8
-bindsym Mod4+9 workspace 9
-bindsym Mod4+0 workspace 10
+bindsym Mod4+3 workspace 3: web
+bindsym Mod4+4 workspace 4: steam
+bindsym Mod4+5 workspace 5: spotify
+bindsym Mod4+6 workspace 6: rpi
+bindsym Mod4+7 workspace 7: oth
+bindsym Mod4+8 workspace 8:
+bindsym Mod4+9 workspace 9:
+
 
 # move focused container to workspace
-bindsym Mod4+Shift+1 move workspace 1: main
+bindsym Mod4+Shift+1 move workspace 1: term
 bindsym Mod4+Shift+2 move workspace 2: atom
-bindsym Mod4+Shift+3 move workspace 3: term
-bindsym Mod4+Shift+4 move workspace 4: scrap
-bindsym Mod4+Shift+5 move workspace 5:
-bindsym Mod4+Shift+6 move workspace 6:
-bindsym Mod4+Shift+7 move workspace 7
-bindsym Mod4+Shift+8 move workspace 8
-bindsym Mod4+Shift+9 move workspace 9
-bindsym Mod4+Shift+0 move workspace 10
+bindsym Mod4+Shift+3 move workspace 3: web
+bindsym Mod4+Shift+4 move workspace 4: steam
+bindsym Mod4+Shift+5 move workspace 5: spotify
+bindsym Mod4+Shift+6 move workspace 6: rpi
+bindsym Mod4+Shift+7 move workspace 7: oth
+bindsym Mod4+Shift+8 move workspace 8:
+bindsym Mod4+Shift+9 move workspace 9:
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -180,7 +179,7 @@ gaps outer 3
 #assign [class="^Chromium$"] main
 
 exec_always --no-startup-id nitrogen --restore
-exec_always --no-startup-id compton --config /home/jeston/.config/compton/conf_i3
+exec_always --no-startup-id compton -b
 exec_always --no-startup-id /home/jeston/.config/polybar/launch.sh
 exec --no-startup-id nm-applet
 exec --no-startup-id volumeicon
